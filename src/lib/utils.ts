@@ -1,9 +1,9 @@
 /*
-  Authors:
-  >> Nathan TIROLF - { nathan.tirolf@epitech.eu }
+	Authors:
+	>> Nathan TIROLF - { nathan.tirolf@epitech.eu }
 
-  („• ֊ •„)❤  <  Have a good day !
-  --U-----U------------------------
+	(„• ֊ •„)❤  <  Have a good day !
+	--U-----U------------------------
 */
 
 
@@ -14,7 +14,7 @@ import { twMerge } from "tailwind-merge"
 
 /* ----- FUNCTION ----- */
 function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+	return twMerge(clsx(inputs))
 }
 
 
