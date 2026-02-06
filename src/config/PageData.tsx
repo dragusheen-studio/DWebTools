@@ -1,39 +1,52 @@
 /*
 	Authors:
 	>> Nathan TIROLF - { nathan.tirolf@epitech.eu }
-
-	(„• ֊ •„)❤  <  Have a good day !
-	--U-----U------------------------
 */
 
+
 /* ----- IMPORTS ----- */
+import { ICategoryConfig } from "@/types/Category";
 import { IPageConfig } from "@/types/PageData";
-import { Home, Info } from "lucide-react";
+import { Home, Info, TextCursorInput, ShieldCheck, Code2 } from "lucide-react";
+
 
 /* ----- DATAS ----- */
-const PagesDatas: IPageConfig[] = [
-	{
-		name: "Home",
-		path: "/",
-		icon: Home,
-		displayInSidebar: true,
-	},
-	{
-		name: "About",
-		path: "/about",
-		icon: Info,
-		displayInSidebar: true,
-	},
+const MainPages: IPageConfig[] = [
+	{ name: "Accueil", path: "/", icon: Home },
+	{ name: "Parcours", path: "/about", icon: Info },
 ];
 
+const ToolCategories: ICategoryConfig[] = [
+	{
+		name: "Texte",
+		icon: TextCursorInput,
+		tools: [
+		]
+	},
+	{
+		name: "Sécurité",
+		icon: ShieldCheck,
+		tools: [
+		]
+	},
+	{
+		name: "Développement",
+		icon: Code2,
+		tools: [
+		]
+	}
+];
+
+
 /* ----- FUNCTIONS ----- */
-function GetPagesDatas() {
-	return PagesDatas;
+function GetMainPages() {
+	return MainPages;
 }
 
-function GetPagesInSidebar() {
-	return PagesDatas.filter(p => p.displayInSidebar);
+function GetCategoriesPages() {
+	return ToolCategories;
 }
+
 
 /* ----- EXPORTS ----- */
-export { GetPagesDatas, GetPagesInSidebar };
+export { GetMainPages, GetCategoriesPages };

@@ -103,6 +103,8 @@
 	--sidebar-accent-foreground: #fafafa;
 	--sidebar-border: #27272a;
 	--sidebar-ring: #3b82f6;
+	--sidebar-width: 16rem;
+	--sidebar-width-icon: 3.5rem;
 }
 
 .dark {
@@ -141,5 +143,9 @@
 
 	body {
 		@apply bg-background text-foreground;
+	}
+
+	[data-sidebar="sidebar"][data-variant="floating"] {
+		@apply backdrop-blur-md bg-zinc-900/70 border-zinc-800 shadow-2xl transition-all duration-500;
 	}
 }

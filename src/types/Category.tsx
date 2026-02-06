@@ -6,17 +6,19 @@
 	--U-----U------------------------
 */
 
+
 /* ----- IMPORTS ----- */
-import type { LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
+import { IPageConfig } from "@/types/PageData";
 
 
 /* ----- INTERFACES ----- */
-interface IPageConfig {
+interface ICategoryConfig {
 	name: string;
-	path: string;
 	icon: LucideIcon;
+	tools: IPageConfig[];
 }
 
 
 /* ----- EXPORTS ----- */
-export type { IPageConfig };
+export type { ICategoryConfig };
