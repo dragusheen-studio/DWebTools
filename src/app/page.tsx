@@ -1,4 +1,14 @@
-export default function Home() {
+/*
+  Authors:
+  >> Nathan TIROLF - { nathan.tirolf@epitech.eu }
+
+  („• ֊ •„)❤  <  Have a good day !
+  --U-----U------------------------
+*/
+
+
+/* ----- COMPONENT ----- */
+function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <h1 className="text-6xl font-black tracking-tighter">
@@ -13,3 +23,6 @@ export default function Home() {
     </main>
   );
 }
+
+/* ----- EXPORT ----- */
+export default Home;

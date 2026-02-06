@@ -1,5 +1,17 @@
+/*
+  Authors:
+  >> Nathan TIROLF - { nathan.tirolf@epitech.eu }
+
+  („• ֊ •„)❤  <  Have a good day !
+  --U-----U------------------------
+*/
+
+
+/* ----- IMPORTS ----- */
 import React from 'react';
 
+
+/* ----- PROPS ----- */
 interface BentoCardProps {
   title: string;
   description: string;
@@ -8,7 +20,9 @@ interface BentoCardProps {
   className?: string;
 }
 
-export const BentoCard = ({ title, description, icon, color, className }: BentoCardProps) => {
+
+/* ----- COMPONENT ----- */
+function BentoCard({ title, description, icon, color, className }: BentoCardProps) {
   return (
     <div className={`p-6 bg-zinc-900 border border-zinc-800 rounded-4xl hover:border-zinc-700 transition-all cursor-pointer group ${className}`}>
       <div className={`mb-4 w-12 h-12 flex items-center justify-center rounded-2xl bg-zinc-950 border border-zinc-800 group-hover:scale-110 transition-transform ${color}`}>
@@ -19,3 +33,6 @@ export const BentoCard = ({ title, description, icon, color, className }: BentoC
     </div>
   );
 };
+
+/* ----- EXPORT ----- */
+export default BentoCard;
