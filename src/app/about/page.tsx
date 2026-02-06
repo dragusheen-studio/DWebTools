@@ -7,16 +7,16 @@
 */
 
 /* ----- COMPONENT ----- */
-function HomePage() {
+function AboutPage() {
 	return (
 		<div className="flex flex-col gap-2">
-			<h1 className="text-4xl font-bold tracking-tight">DWebTools</h1>
+			<h1 className="text-4xl font-bold tracking-tight">À Propos</h1>
 			<p className="text-zinc-400 text-lg">
-				La boîte à outils centralisée pour ton quotidien de développeur.
+				Découvre pourquoi j'ai créé ce projet et accède à mon portfolio.
 			</p>
 		</div>
 	);
 }
 
 /* ----- EXPORT ----- */
-export default HomePage;
+export default AboutPage;
