@@ -36,6 +36,9 @@ import { GetMainPages, GetCategoriesPages } from "@/config/PageData";
 function AppSidebar() {
 	const { setOpen, isMobile } = useSidebar();
 
+	const MenuPages = GetMainPages();
+	const CategoriesPages = GetCategoriesPages();
+
 	return (
 		<Sidebar
 			variant="floating"
@@ -63,12 +66,15 @@ function AppSidebar() {
 
 			<SidebarContent className="overflow-hidden">
 				<SidebarGroup>
+					<SidebarGroupLabel className="group-data-[collapsible=icon]:opacity-0 transition-opacity uppercase text-[10px] tracking-widest font-extrabold text-zinc-500 mb-2">
+						Menu
+					</SidebarGroupLabel>
 					<SidebarMenu>
 						{GetMainPages().map((item) => (
 							<SidebarMenuItem key={item.name}>
 								<SidebarMenuButton asChild tooltip={item.name} className="h-11 rounded-2xl">
 									<Link href={item.path}>
-										<item.icon className="w-5 h-5" />
+										{item.icon && <item.icon className="w-5 h-5" />}
 										<span className="font-medium">{item.name}</span>
 									</Link>
 								</SidebarMenuButton>
@@ -77,39 +83,42 @@ function AppSidebar() {
 					</SidebarMenu>
 				</SidebarGroup>
 
-				<SidebarGroup>
-					<SidebarGroupLabel className="group-data-[collapsible=icon]:opacity-0 transition-opacity uppercase text-[10px] tracking-widest font-extrabold text-zinc-500 mb-2">
-						Outils
-					</SidebarGroupLabel>
-					<SidebarMenu>
-						{GetCategoriesPages().map((category) => (
-							<Collapsible key={category.name} asChild className="group/collapsible">
-								<SidebarMenuItem>
-									<CollapsibleTrigger asChild>
-										<SidebarMenuButton tooltip={category.name} className="h-11 rounded-2xl">
-											<category.icon className="w-5 h-5" />
-											<span className="font-medium">{category.name}</span>
-											<ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90 group-data-[collapsible=icon]:hidden" />
-										</SidebarMenuButton>
-									</CollapsibleTrigger>
-									<CollapsibleContent>
-										<SidebarMenuSub>
-											{category.tools.map((tool) => (
-												<SidebarMenuSubItem key={tool.name}>
-													<SidebarMenuSubButton asChild className="rounded-xl h-9">
-														<Link href={tool.path}>
-															<span>{tool.name}</span>
-														</Link>
-													</SidebarMenuSubButton>
-												</SidebarMenuSubItem>
-											))}
-										</SidebarMenuSub>
-									</CollapsibleContent>
-								</SidebarMenuItem>
-							</Collapsible>
-						))}
-					</SidebarMenu>
-				</SidebarGroup>
+				{
+					CategoriesPages.length > 0 && (
+						<SidebarGroup>
+							<SidebarGroupLabel className="group-data-[collapsible=icon]:opacity-0 transition-opacity uppercase text-[10px] tracking-widest font-extrabold text-zinc-500 mb-2">
+								Outils
+							</SidebarGroupLabel>
+							<SidebarMenu>
+								{GetCategoriesPages().map((category) => (
+									<Collapsible key={category.name} asChild className="group/collapsible">
+										<SidebarMenuItem>
+											<CollapsibleTrigger asChild>
+												<SidebarMenuButton tooltip={category.name} className="h-11 rounded-2xl">
+													<category.icon className="w-5 h-5" />
+													<span className="font-medium">{category.name}</span>
+													<ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90 group-data-[collapsible=icon]:hidden" />
+												</SidebarMenuButton>
+											</CollapsibleTrigger>
+											<CollapsibleContent>
+												<SidebarMenuSub>
+													{category.tools.map((tool) => (
+														<SidebarMenuSubItem key={tool.name}>
+															<SidebarMenuSubButton asChild className="rounded-xl h-9">
+																<Link href={tool.path}>
+																	<span>{tool.name}</span>
+																</Link>
+															</SidebarMenuSubButton>
+														</SidebarMenuSubItem>
+													))}
+												</SidebarMenuSub>
+											</CollapsibleContent>
+										</SidebarMenuItem>
+									</Collapsible>
+								))}
+							</SidebarMenu>
+						</SidebarGroup>
+					)}
 			</SidebarContent>
 		</Sidebar>
 	);

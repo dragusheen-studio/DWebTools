@@ -14,7 +14,7 @@ import type { LucideIcon } from "lucide-react";
 interface IPageConfig {
 	name: string;
 	path: string;
-	icon: LucideIcon;
+	icon?: LucideIcon;
 }
 
 

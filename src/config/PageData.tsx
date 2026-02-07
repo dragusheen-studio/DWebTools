@@ -16,7 +16,7 @@ const MainPages: IPageConfig[] = [
 	{ name: "Parcours", path: "/about", icon: Info },
 ];
 
-const ToolCategories: ICategoryConfig[] = [
+const AllCategories: ICategoryConfig[] = [
 	{
 		name: "Texte",
 		icon: TextCursorInput,
@@ -44,7 +44,7 @@ function GetMainPages() {
 }
 
 function GetCategoriesPages() {
-	return ToolCategories;
+	return AllCategories.filter(category => category.tools.length > 0);
 }
 
 
