@@ -30,7 +30,7 @@ function SearchBar() {
 	}, []);
 
 	return (
-		<div className="relative w-full max-w-2xl group">
+		<div className="relative w-full max-w-3xl group">
 			<div className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-500 group-focus-within:text-blue-500 transition-colors duration-300 pointer-events-none">
 				<Search size={20} strokeWidth={2.5} />
 			</div>

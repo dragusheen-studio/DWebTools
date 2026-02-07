@@ -6,24 +6,26 @@
 	--U-----U------------------------
 */
 
-
 /* ----- IMPORTS ----- */
-import SearchBar from "@/components/shared/SearchBar";
-
+import HomePageHero from "./hero";
 
 /* ----- COMPONENT ----- */
 function HomePage() {
 	return (
-		<div className="flex flex-col gap-2">
-			<h1 className="text-4xl font-bold tracking-tight">DWebTools</h1>
-			<p className="text-zinc-400 text-lg">
-				La boîte à outils centralisée pour ton quotidien de développeur.
-			</p>
-			<SearchBar />
+		<div className="flex flex-col w-full items-center">
+			<HomePageHero />
+
+			{/* --- SECTION BENTO --- */}
+			<section className="w-full max-w-6xl px-4 pb-20" id="bento-section">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+					<div className="h-40 rounded-4xl bg-zinc-900 border border-zinc-800 border-dashed flex items-center justify-center text-zinc-600 italic">
+						Bento Grid en cours...
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 }
-
 
 /* ----- EXPORT ----- */
 export default HomePage;
