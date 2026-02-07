@@ -6,6 +6,11 @@
 	--U-----U------------------------
 */
 
+
+/* ----- IMPORTS ----- */
+import SearchBar from "@/components/shared/SearchBar";
+
+
 /* ----- COMPONENT ----- */
 function HomePage() {
 	return (
@@ -14,9 +19,11 @@ function HomePage() {
 			<p className="text-zinc-400 text-lg">
 				La boîte à outils centralisée pour ton quotidien de développeur.
 			</p>
+			<SearchBar />
 		</div>
 	);
 }
+
 
 /* ----- EXPORT ----- */
 export default HomePage;
