@@ -18,12 +18,12 @@ import { ChevronDown } from "lucide-react";
 /* ----- PROPS ----- */
 interface HomePageHeroProps {
 	searchQuery: string;
-	onChangeSearchQuery: (value: string) => void;
+	onChange: (value: string) => void;
 }
 
 
 /* ----- COMPONENT ----- */
-function HomePageHero({ searchQuery, onChangeSearchQuery }: HomePageHeroProps) {
+function HomePageHero({ searchQuery, onChange }: HomePageHeroProps) {
 	return (
 		<section className="flex flex-col min-h-screen w-full h-full">
 			<div className="flex flex-1 flex-col items-center justify-center w-full h-full gap-8">
@@ -40,7 +40,7 @@ function HomePageHero({ searchQuery, onChangeSearchQuery }: HomePageHeroProps) {
 						La boîte à outils centralisée pour le quotidien.
 					</p>
 				</div>
-				<SearchBar searchQuery={searchQuery} onChangeSearchQuery={onChangeSearchQuery} />
+				<SearchBar searchQuery={searchQuery} onChange={onChange} />
 			</div>
 
 			<div
