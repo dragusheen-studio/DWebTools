@@ -10,12 +10,20 @@
 
 /* ----- IMPORTS ----- */
 import Image from "next/image";
-import SearchBar from "@/components/shared/SearchBar";
+import SearchBar from "@/components/pages/home/Hero/SearchBar";
 import { scrollToElement } from "@/services/scroll";
 import { ChevronDown } from "lucide-react";
 
+
+/* ----- PROPS ----- */
+interface HomePageHeroProps {
+	searchQuery: string;
+	onChangeSearchQuery: (value: string) => void;
+}
+
+
 /* ----- COMPONENT ----- */
-function HomePageHero() {
+function HomePageHero({ searchQuery, onChangeSearchQuery }: HomePageHeroProps) {
 	return (
 		<section className="flex flex-col min-h-screen w-full h-full">
 			<div className="flex flex-1 flex-col items-center justify-center w-full h-full gap-8">
@@ -32,7 +40,7 @@ function HomePageHero() {
 						La boîte à outils centralisée pour le quotidien.
 					</p>
 				</div>
-				<SearchBar />
+				<SearchBar searchQuery={searchQuery} onChangeSearchQuery={onChangeSearchQuery} />
 			</div>
 
 			<div

@@ -11,7 +11,7 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import AppSidebar from "@/components/shared/AppSidebar";
+import AppSidebar from "@/components/layout/AppSidebar";
 
 
 /* ----- FONTS ----- */
