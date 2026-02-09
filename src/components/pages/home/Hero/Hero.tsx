@@ -13,6 +13,7 @@ import Image from "next/image";
 import SearchBar from "@/components/pages/home/Hero/SearchBar";
 import { scrollToElement } from "@/services/scroll";
 import { ChevronDown } from "lucide-react";
+import Teaser from "@/components/layout/Teaser";
 
 
 /* ----- PROPS ----- */
@@ -42,18 +43,7 @@ function HomePageHero({ searchQuery, onChange }: HomePageHeroProps) {
 				</div>
 				<SearchBar searchQuery={searchQuery} onChange={onChange} />
 			</div>
-
-			<div
-				className="flex items-center justify-around pb-8 cursor-pointer group"
-				onClick={() => scrollToElement("bento-section")}
-			>
-				<div className="h-px w-1/3 bg-zinc-800 group-hover:bg-zinc-700 transition-colors duration-400"></div>
-				<div className="text-zinc-500 group-hover:text-zinc-300 transition-colors duration-400 text-sm font-black uppercase tracking-[0.2em] flex flex-col gap-1 justify-center items-center animate-bounce">
-					<div>Explore les outils</div>
-					<ChevronDown size={20} />
-				</div>
-				<div className="h-px w-1/3 bg-zinc-800 group-hover:bg-zinc-700 transition-colors duration-400"></div>
-			</div>
+			<Teaser goTo="bento-section" text="Explore les outils" lines={true} />
 		</section >
 	);
 }
