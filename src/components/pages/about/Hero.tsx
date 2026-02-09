@@ -20,7 +20,7 @@ function HeroSection() {
 	const Buttons = [
 		{ label: "Problème / Solution", icon: Target, id: "mission" },
 		{ label: "Stack Technique", icon: Cpu, id: "stack" },
-		{ label: "Crafted By", icon: UserCircle, id: "author" }
+		{ label: "Dragusheen", icon: UserCircle, id: "author" }
 	];
 
 	return (

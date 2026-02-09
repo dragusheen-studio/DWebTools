@@ -8,6 +8,7 @@
 
 "use client";
 
+import AuthorSection from "@/components/pages/about/Author/Author";
 /* ----- IMPORTS ----- */
 import HeroSection from "@/components/pages/about/Hero";
 import MissionSection from "@/components/pages/about/Mission";
@@ -20,14 +21,7 @@ function AboutPage() {
 			<HeroSection />
 			<MissionSection />
 			<StackSection />
-
-			{/* --- SECTION : STACK --- */}
-			<section id="author" className="min-h-screen w-full flex items-center justify-center py-20 px-6">
-				<div className="h-96 w-full max-w-4xl bg-zinc-900/20 border border-zinc-800 border-dashed rounded-4xl flex items-center justify-center text-zinc-600 italic">
-					author en attente...
-				</div>
-			</section>
-
+			<AuthorSection />
 		</div>
 	);
 }
