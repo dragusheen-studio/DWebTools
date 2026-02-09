@@ -1,0 +1,54 @@
+#!/bin/bash
+
+function check_node_version() {
+    requested_node_version="22"
+    length_requested_node_version=${#requested_node_version}
+
+    node_version=$(node -v)
+    node_version=${node_version:1:${length_requested_node_version}}
+
+    if [[ $node_version < $requested_node_version ]]; then
+        export NVM_DIR=$HOME/.nvm;
+        source $NVM_DIR/nvm.sh;
+        echo ">> Current Node version is $node_version. Installing Node $requested_node_version.."
+        nvm use $requested_node_version
+        echo ""
+        echo ">> Node $requested_node_version has been installed !"
+        echo ""
+    else
+        echo ">> Node version is on version $node_version. No upgrade needed."
+        echo ""
+    fi
+}
+
+function check_pnpm() {
+	if ! command -v pnpm &> /dev/null
+	then
+		echo ">> pnpm could not be found. Installing pnpm.."
+		npm install -g pnpm
+		echo ""
+		echo ">> pnpm has been installed !"
+		echo ""
+	else
+		echo ">> pnpm is already installed."
+		echo ""
+	fi
+}
+
+function check_port() {
+	port=5050
+    if [[ $(lsof -i:$port) ]]; then
+        echo ">> The project is already running or the port $port is already used."
+        echo ""
+		exit 1
+	else
+		echo ">> Port $port is available."
+		echo ""
+	fi
+}
+
+check_node_version
+check_pnpm
+check_port
+
+gnome-terminal --tab --title="Front-End DWebTools" -- bash -c "./bin/run"
