@@ -11,8 +11,6 @@
 /* ----- IMPORTS ----- */
 import Image from "next/image";
 import SearchBar from "@/components/pages/home/Hero/SearchBar";
-import { scrollToElement } from "@/services/scroll";
-import { ChevronDown } from "lucide-react";
 import Teaser from "@/components/layout/Teaser";
 
 

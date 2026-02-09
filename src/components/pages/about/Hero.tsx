@@ -15,7 +15,7 @@ import Teaser from "@/components/layout/Teaser";
 
 
 /* ----- COMPONENT ----- */
-function AboutPageHero() {
+function HeroSection() {
 	const Buttons = [
 		{ label: "Problème / Solution", icon: Target, id: "mission" },
 		{ label: "Stack Technique", icon: Cpu, id: "stack" },
@@ -58,4 +58,4 @@ function AboutPageHero() {
 
 
 /* ----- EXPORT ----- */
-export default AboutPageHero;
+export default HeroSection;
