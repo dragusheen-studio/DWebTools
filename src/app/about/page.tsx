@@ -8,8 +8,8 @@
 
 "use client";
 
-import AuthorSection from "@/components/pages/about/Author/Author";
 /* ----- IMPORTS ----- */
+import AuthorSection from "@/components/pages/about/Author/Author";
 import HeroSection from "@/components/pages/about/Hero";
 import MissionSection from "@/components/pages/about/Mission";
 import StackSection from "@/components/pages/about/Stack";
