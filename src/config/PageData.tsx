@@ -13,7 +13,7 @@ import { Home, Info, TextCursorInput, ShieldCheck, Code2, ImageIcon, Zap, FileJs
 /* ----- DATAS ----- */
 const MainPages: IPageConfig[] = [
 	{ name: "Accueil", path: "/", icon: Home },
-	{ name: "Parcours", path: "/about", icon: Info },
+	{ name: "À propos", path: "/about", icon: Info },
 ];
 
 const AllCategories: ICategoryConfig[] = [

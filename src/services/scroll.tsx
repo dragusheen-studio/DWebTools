@@ -19,7 +19,7 @@ function scrollToTop() {
 function scrollToElement(id: string) {
 	const element = document.getElementById(id);
 	if (element) {
-		const y = element.getBoundingClientRect().top + window.scrollY - 100;
+		const y = element.getBoundingClientRect().top + window.scrollY;
 		scrollTo(y);
 	}
 }
