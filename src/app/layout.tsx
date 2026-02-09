@@ -11,7 +11,7 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import AppSidebar from "@/components/shared/AppSidebar";
+import AppSidebar from "@/components/layout/AppSidebar";
 
 
 /* ----- FONTS ----- */
@@ -33,7 +33,7 @@ export default function RootLayout({
 			<body className={`${outfit.variable} font-sans`} suppressHydrationWarning>
 				<SidebarProvider defaultOpen={false}>
 					<AppSidebar />
-					<main className="w-full min-h-screen p-6">
+					<main className="w-full min-h-screen">
 						{children}
 					</main>
 				</SidebarProvider>

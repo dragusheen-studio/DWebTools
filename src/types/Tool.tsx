@@ -6,25 +6,24 @@
 	--U-----U------------------------
 */
 
-
 /* ----- IMPORTS ----- */
-import { LucideIcon } from "lucide-react";
-import { IToolConfig } from "@/types/Tool";
+import type { LucideIcon } from "lucide-react";
 
 
 /* ----- INTERFACES ----- */
-type CategoryColor = "blue" | "green" | "purple" | "orange" | "default";
+type ToolSize = "small" | "medium" | "large";
 
-interface ICategoryConfig {
+interface IToolConfig {
 	name: string;
+	path: string;
+	description: string;
 	icon: LucideIcon;
-	color: CategoryColor;
-	tools: IToolConfig[];
+	size: ToolSize;
 }
 
 
 /* ----- EXPORTS ----- */
 export type {
-	CategoryColor,
-	ICategoryConfig,
+	ToolSize,
+	IToolConfig,
 };
