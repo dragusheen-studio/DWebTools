@@ -10,6 +10,7 @@
 
 /* ----- IMPORTS ----- */
 import AuthorCard from "./AuthorCard";
+import FadeIn from "@/components/layout/FadeIn";
 
 
 /* ----- COMPONENT ----- */
@@ -25,7 +26,7 @@ function AuthorSection() {
 						Derrière le code.
 					</p>
 				</div>
-				<AuthorCard />
+				<FadeIn><AuthorCard /></FadeIn>
 				<p className="text-zinc-600 text-[10px] font-black uppercase tracking-[0.5em] mt-10">
 					Propulsé par la curiosité & le café
 				</p>
