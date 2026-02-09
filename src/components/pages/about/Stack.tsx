@@ -8,6 +8,7 @@
 /* ----- IMPORTS ----- */
 import { Cpu, Code2, Globe, Layout, ShieldCheck, Zap } from "lucide-react";
 import Teaser from "@/components/layout/Teaser";
+import FadeIn from "@/components/layout/FadeIn";
 
 
 /* ----- COMPONENT ----- */
@@ -34,21 +35,22 @@ function StackSection() {
 				</div>
 
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-					{technologies.map((tech) => (
-						<div
-							key={tech.name}
-							className="group p-8 rounded-4xl bg-zinc-900/20 border border-zinc-800/50 transition-all duration-500 hover:border-purple-500/50 hover:bg-zinc-900/40 hover:shadow-[0_0_40px_-12px_rgba(168,85,247,0.3)]"
-						>
-							<div className="flex items-center gap-4 mb-4">
-								<div className="p-3 rounded-2xl bg-zinc-950 border border-zinc-800 group-hover:border-purple-500/50 transition-colors">
-									<tech.icon size={20} className="text-zinc-500 group-hover:text-purple-400 transition-colors" />
+					{technologies.map((tech, index) => (
+						<FadeIn direction="up" key={index} delay={0.2 + index / 10}>
+							<div
+								className="group p-8 rounded-4xl bg-zinc-900/20 border border-zinc-800/50 transition-all duration-500 hover:border-purple-500/50 hover:bg-zinc-900/40 hover:shadow-[0_0_40px_-12px_rgba(168,85,247,0.3)]"
+							>
+								<div className="flex items-center gap-4 mb-4">
+									<div className="p-3 rounded-2xl bg-zinc-950 border border-zinc-800 group-hover:border-purple-500/50 transition-colors">
+										<tech.icon size={20} className="text-zinc-500 group-hover:text-purple-400 transition-colors" />
+									</div>
+									<h3 className="text-xl font-black italic text-zinc-200">{tech.name}</h3>
 								</div>
-								<h3 className="text-xl font-black italic text-zinc-200">{tech.name}</h3>
+								<p className="text-zinc-500 text-sm leading-relaxed font-medium italic group-hover:text-zinc-400 transition-colors">
+									{tech.desc}
+								</p>
 							</div>
-							<p className="text-zinc-500 text-sm leading-relaxed font-medium italic group-hover:text-zinc-400 transition-colors">
-								{tech.desc}
-							</p>
-						</div>
+						</FadeIn>
 					))}
 				</div>
 			</div>

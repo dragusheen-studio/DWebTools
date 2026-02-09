@@ -8,7 +8,6 @@
 
 "use client";
 
-import FadeIn from "@/components/layout/FadeIn";
 /* ----- IMPORTS ----- */
 import HeroSection from "@/components/pages/about/Hero";
 import MissionSection from "@/components/pages/about/Mission";
@@ -18,9 +17,9 @@ import StackSection from "@/components/pages/about/Stack";
 function AboutPage() {
 	return (
 		<div className="flex flex-col w-full gap-20">
-			<FadeIn><HeroSection /></FadeIn>
-			<FadeIn><MissionSection /></FadeIn>
-			<FadeIn><StackSection /></FadeIn>
+			<HeroSection />
+			<MissionSection />
+			<StackSection />
 
 			{/* --- SECTION : STACK --- */}
 			<section id="author" className="min-h-screen w-full flex items-center justify-center py-20 px-6">
