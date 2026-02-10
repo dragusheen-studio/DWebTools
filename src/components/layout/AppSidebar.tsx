@@ -27,7 +27,7 @@ import {
 	useSidebar
 } from "@/components/ui/sidebar";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { GetMainPages, GetCategoriesPages } from "@/config/PageData";
+import { GetMainPages, GetCategoriesPages, GetActiveToolsInCategory } from "@/config/PageData";
 
 
 /* ----- COMPONENT ----- */
@@ -88,7 +88,7 @@ function AppSidebar() {
 								Outils
 							</SidebarGroupLabel>
 							<SidebarMenu>
-								{GetCategoriesPages().map((category) => (
+								{CategoriesPages.map((category) => (
 									<Collapsible key={category.name} asChild className="group/collapsible">
 										<SidebarMenuItem>
 											<CollapsibleTrigger asChild>
@@ -100,7 +100,7 @@ function AppSidebar() {
 											</CollapsibleTrigger>
 											<CollapsibleContent>
 												<SidebarMenuSub>
-													{category.tools.map((tool) => (
+													{GetActiveToolsInCategory(category, false).map((tool) => (
 														<SidebarMenuSubItem key={tool.name}>
 															<SidebarMenuSubButton asChild className="rounded-xl h-9">
 																<Link href={tool.path}>

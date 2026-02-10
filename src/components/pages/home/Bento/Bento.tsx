@@ -24,6 +24,7 @@ interface HomePageBentoProps {
 /* ----- COMPONENT ----- */
 function HomePageBento({ searchQuery, setSearchQuery }: HomePageBentoProps) {
 	const allTools = useMemo(() => GetAllTools(), []);
+
 	const filteredTools = useMemo(() => {
 		return allTools.filter((tool) => {
 			const search = searchQuery.toLowerCase();
@@ -31,6 +32,8 @@ function HomePageBento({ searchQuery, setSearchQuery }: HomePageBentoProps) {
 				tool.name.toLowerCase().includes(search) ||
 				tool.description.toLowerCase().includes(search)
 			);
+		}).sort((a, b) => {
+			return a.comingSoon === b.comingSoon ? 0 : a.comingSoon ? 1 : -1;
 		});
 	}, [searchQuery, allTools]);
 

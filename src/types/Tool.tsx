@@ -19,6 +19,7 @@ interface IToolConfig {
 	description: string;
 	icon: LucideIcon;
 	size: ToolSize;
+	comingSoon: boolean;
 }
 
 
