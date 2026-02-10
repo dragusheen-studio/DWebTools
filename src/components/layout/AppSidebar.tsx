@@ -9,7 +9,6 @@
 "use client";
 
 /* ----- IMPORTS ----- */
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
@@ -17,7 +16,6 @@ import {
 	Sidebar,
 	SidebarContent,
 	SidebarGroup,
-	SidebarGroupContent,
 	SidebarGroupLabel,
 	SidebarHeader,
 	SidebarMenu,
@@ -45,7 +43,7 @@ function AppSidebar() {
 			collapsible="icon"
 			onMouseEnter={() => !isMobile && setOpen(true)}
 			onMouseLeave={() => !isMobile && setOpen(false)}
-			className="transition-all duration-500 ease-in-out"
+			className="transition-all duration-500 ease-in-out fixed"
 		>
 			<SidebarHeader className="p-2 group-data-[collapsible=icon]:p-0 transition-all duration-300">
 				<Link href="/" className="flex items-center gap-3 p-2 h-12 overflow-hidden">
@@ -70,7 +68,7 @@ function AppSidebar() {
 						Menu
 					</SidebarGroupLabel>
 					<SidebarMenu>
-						{GetMainPages().map((item) => (
+						{MenuPages.map((item) => (
 							<SidebarMenuItem key={item.name}>
 								<SidebarMenuButton asChild tooltip={item.name} className="h-11 rounded-2xl">
 									<Link href={item.path}>
