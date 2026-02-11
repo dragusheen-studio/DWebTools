@@ -1,0 +1,63 @@
+{
+	"title": "DWebTools",
+	"subtitle": "La boîte à outils centralisée pour développeurs.",
+	"description": "Une plateforme d'outils web open-source, ultra-rapide et respectueuse de la vie privée. Conçue pour centraliser les utilitaires quotidiens (texte, sécurité, dev, design) dans une interface Bento élégante.",
+	"image": "./cover.png",
+	"tags": [
+		{
+			"name": "Next.js 15",
+			"important": true
+		},
+		{
+			"name": "TypeScript",
+			"important": true
+		},
+		{
+			"name": "Tailwind CSS",
+			"important": true
+		},
+		{
+			"name": "Framer Motion",
+			"important": false
+		},
+		{
+			"name": "Shadcn/UI",
+			"important": false
+		}
+	],
+	"links": [
+		{
+			"name": "Live",
+			"url": "https://dwebtools.dragusheen.com"
+		},
+		{
+			"name": "GitHub",
+			"url": "https://github.com/votre-pseudo/dwebtools"
+		}
+	],
+	"featured": true,
+	"details": {
+		"role": "Fullstack Developer & UI Designer",
+		"status": "En développement (Beta)",
+		"client": {
+			"name": "Open Source Project",
+			"url": "https://dwebtools.dragusheen.com",
+			"description": "Utilitaire communautaire"
+		},
+		"problem": "La fatigue de navigation : les développeurs doivent souvent jongler entre une dizaine de sites différents, souvent truffés de publicités et de trackers, pour des tâches simples comme formater un JSON ou compter des mots.",
+		"solution": "Une Single Page Application (SPA) performante utilisant le système de fichiers de Next.js pour une navigation instantanée. Intégration d'une Command Palette (Ctrl+K) pour un accès clavier prioritaire et un design inspiré des Bento Grids pour une clarté visuelle maximale.",
+		"features": [
+			"Architecture modulaire par outils",
+			"Navigation globale via Command Palette (Ctrl+K)",
+			"Interface Bento responsive & immersive",
+			"Zéro tracking & Traitement client-side uniquement",
+			"Système de recherche temps réel"
+		],
+		"gallery": [
+			"./home.png",
+			"./bento.png",
+			"./text-stat.png"
+		],
+		"version": "0.1.0"
+	}
+}
