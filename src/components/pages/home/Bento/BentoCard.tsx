@@ -12,7 +12,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { IToolConfig } from "@/types/Tool";
-import { GetBgGradient, GetDotColor, GetGlowClass, GetSizeClass } from "@/config/Bento";
+import { GetBgGradient, GetDotColor, GetGlowClassHover, GetSizeClass } from "@/config/Bento";
 import { CategoryColor } from "@/types/Category";
 
 
@@ -33,7 +33,7 @@ function BentoCard({ name, description, icon: Icon, path, size, color, comingSoo
 				"group relative flex flex-col justify-between p-8 rounded-4xl transition-all duration-500",
 				"bg-zinc-900/40 border border-zinc-800/50 backdrop-blur-md h-full w-full",
 				GetSizeClass(size),
-				comingSoon ? "opacity-40 cursor-not-allowed" : "hover:-translate-y-2 cursor-pointer " + GetGlowClass(color)
+				comingSoon ? "opacity-40 cursor-not-allowed" : "hover:-translate-y-2 cursor-pointer " + GetGlowClassHover(color)
 			)}
 		>
 			<div className={cn(

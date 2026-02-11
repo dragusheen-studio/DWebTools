@@ -9,7 +9,7 @@
 "use client";
 
 /* ----- IMPORTS ----- */
-import { GetAllTools } from "@/config/PageData";
+import { GetAllBentoTools } from "@/config/PageData";
 import BentoCard from "@/components/pages/home/Bento/BentoCard";
 import { useMemo } from "react";
 
@@ -23,7 +23,7 @@ interface HomePageBentoProps {
 
 /* ----- COMPONENT ----- */
 function HomePageBento({ searchQuery, setSearchQuery }: HomePageBentoProps) {
-	const allTools = useMemo(() => GetAllTools(), []);
+	const allTools = useMemo(() => GetAllBentoTools(), []);
 
 	const filteredTools = useMemo(() => {
 		return allTools.filter((tool) => {

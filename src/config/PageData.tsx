@@ -10,18 +10,12 @@
 /* ----- IMPORTS ----- */
 import { ICategoryConfig } from "@/types/Category";
 import { IPageConfig } from "@/types/PageData";
+import { IToolConfig } from "@/types/Tool";
 import {
-	Home, Info, TextCursorInput, ShieldCheck, Code2, ImageIcon, Zap,
-	FileJson, Hash, Database, Terminal, Cpu, Search, Lock,
-	List, SortAsc, Fingerprint, Key, Link, Eye, Layout, Palette,
-	QrCode, Maximize, Scaling, FileCode, Languages, Braces,
-	TextInitial,
-	Globe,
-	Network,
-	FileSearch,
-	Activity,
-	FileOutput,
-	File
+	Home, Info, TextCursorInput, ShieldCheck, Code2, ImageIcon, Zap, FileJson, Hash, Database,
+	Terminal, Cpu, Search, Lock, List, SortAsc, Fingerprint, TextInitial, Link, Layout,
+	Palette, QrCode, Maximize, Scaling, FileCode, Languages, Key, Globe, Network, FileSearch,
+	Activity, FileOutput, File
 } from "lucide-react";
 import { FaYoutube } from "react-icons/fa";
 
@@ -38,7 +32,7 @@ const AllCategories: ICategoryConfig[] = [
 		icon: TextCursorInput,
 		color: "blue",
 		tools: [
-			{ name: "Compteur de mots", path: "/tools/word-counter", description: "Stats détaillées : mots, signes et temps de lecture.", icon: TextCursorInput, size: "medium", comingSoon: true },
+			{ name: "Compteur de mots", path: "/tools/word-counter", description: "Stats détaillées : mots, signes et temps de lecture.", icon: TextCursorInput, size: "medium", comingSoon: false },
 			{ name: "Case Converter", path: "/tools/case-converter", description: "Transformez vos textes en camel, snake ou kebab case.", icon: Zap, size: "small", comingSoon: true },
 			{ name: "Lorem Ipsum", path: "/tools/lorem-ipsum", description: "Générateur de texte de remplissage modulable.", icon: FileCode, size: "small", comingSoon: true },
 			{ name: "Text Diff Checker", path: "/tools/text-diff", description: "Comparez deux textes pour voir les différences.", icon: FileJson, size: "medium", comingSoon: true },
@@ -124,12 +118,12 @@ function GetCategoriesPages() {
 	return AllCategories.filter(category => category.tools.length > 0 && !category.tools.every(tool => tool.comingSoon));
 }
 
-function GetAllTools() {
+function GetAllBentoTools() {
 	return AllCategories.flatMap(category => category.tools.map(tool => ({ ...tool, color: category.color })));
 }
 
-function GetActiveTools(comingSoon: boolean) {
-	const tools = GetAllTools();
+function GetActiveBentoTools(comingSoon: boolean) {
+	const tools = GetAllBentoTools();
 	return tools.filter(tool => tool.comingSoon === comingSoon);
 }
 
@@ -138,12 +132,22 @@ function GetActiveToolsInCategory(category: ICategoryConfig, comingSoon: boolean
 	return tools.filter(tool => tool.comingSoon === comingSoon);
 }
 
+function GetToolByPath(path: string) {
+	return GetAllBentoTools().find(tool => tool.path === path);
+}
+
+function GetCategoryByTool(tool: IToolConfig) {
+	return AllCategories.find(category => category.tools.some(t => t.path === tool.path));
+}
+
 
 /* ----- EXPORTS ----- */
 export {
 	GetMainPages,
 	GetCategoriesPages,
-	GetAllTools,
-	GetActiveTools,
+	GetAllBentoTools,
+	GetActiveBentoTools,
 	GetActiveToolsInCategory,
+	GetToolByPath,
+	GetCategoryByTool
 };
