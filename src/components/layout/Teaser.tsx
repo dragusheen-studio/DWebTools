@@ -31,7 +31,7 @@ function Teaser({ goTo, text, lines = false }: TeaserProps) {
 		>
 			{lines && <div className="h-px w-1/3 bg-zinc-700 group-hover:bg-zinc-700 transition-colors duration-400"></div>}
 			<div className="text-zinc-500 group-hover:text-zinc-300 transition-colors duration-400 text-sm font-black uppercase tracking-[0.2em] flex flex-col gap-1 justify-center items-center animate-bounce">
-				<span>{text}</span>
+				<span className="text-center">{text}</span>
 				<ChevronDown size={20} />
 			</div>
 			{lines && <div className="h-px w-1/3 bg-zinc-700 group-hover:bg-zinc-700 transition-colors duration-400"></div>}

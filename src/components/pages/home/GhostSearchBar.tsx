@@ -26,7 +26,7 @@ interface GhostSearchBarProps {
 function GhostSearchBar({ visible, onChange, searchQuery }: GhostSearchBarProps) {
 	return (
 		<div className={cn(
-			"fixed top-0 left-0 right-0 z-100 flex justify-center p-4 transition-all duration-500 ease-in-out",
+			"fixed top-0 left-0 right-0 z-100 hidden md:flex justify-center p-4 transition-all duration-500 ease-in-out",
 			visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
 		)}>
 			<div className="w-full max-w-2xl relative group">

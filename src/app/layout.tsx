@@ -35,6 +35,10 @@ export default function RootLayout({
 			<body className={`${outfit.variable} font-sans`} suppressHydrationWarning>
 				<SidebarProvider defaultOpen={false}>
 					<AppSidebar />
+					<div className="flex md:hidden items-center justify-between p-1 border-b backdrop-blur-md fixed top-2 left-2 z-40 rounded-lg bg-zinc-900 border border-zinc-800">
+						<SidebarTrigger />
+					</div>
+
 					<Toaster />
 					<CommandPalette />
 					<main className="w-full min-h-screen">
