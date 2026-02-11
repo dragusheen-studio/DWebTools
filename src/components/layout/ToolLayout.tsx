@@ -41,7 +41,7 @@ function ToolLayout({ tool, category, children }: ToolLayoutProps) {
 							<div className="p-2 rounded-xl bg-zinc-900 border border-zinc-800 group-hover:border-zinc-700 transition-all">
 								<ArrowLeft size={16} />
 							</div>
-							Retour
+							Accueil
 						</Link>
 
 						<div className="flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900/50 border border-zinc-800 shadow-xl">
