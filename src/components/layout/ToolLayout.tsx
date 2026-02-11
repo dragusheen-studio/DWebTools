@@ -23,12 +23,13 @@ import { GetDotColor, GetGlowClass } from "@/config/Bento";
 interface ToolLayoutProps {
 	tool: IToolConfig;
 	category: ISmallCategoryConfig;
+	background?: boolean;
 	children: React.ReactNode;
 }
 
 
 /* ----- COMPONENT ----- */
-function ToolLayout({ tool, category, children }: ToolLayoutProps) {
+function ToolLayout({ tool, category, background = true, children }: ToolLayoutProps) {
 	return (
 		<div className="w-full max-w-6xl mx-auto px-6 py-12 flex flex-col gap-10">
 			<header className="flex flex-col gap-8">
@@ -76,7 +77,7 @@ function ToolLayout({ tool, category, children }: ToolLayoutProps) {
 			</header>
 
 			<FadeIn direction="left" delay={0.6} once={true}>
-				<main className="w-full p-8 rounded-4xl bg-zinc-900/30 border border-zinc-800/80 backdrop-blur-md shadow-2xl min-h-100">
+				<main className={`w-full rounded-4xl min-h-100 ${background ? "p-8 bg-zinc-900/30 border border-zinc-800/80 backdrop-blur-md shadow-2xl" : ""}`}>
 					{children}
 				</main>
 			</FadeIn>
