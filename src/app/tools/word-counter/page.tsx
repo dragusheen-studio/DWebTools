@@ -12,6 +12,7 @@
 import { GetCategoryByTool, GetToolByPath } from "@/config/PageData";
 import { ReduceCategory } from "@/types/Category";
 import ToolLayout from "@/components/layout/ToolLayout";
+import WordCounterContent from "./content";
 
 
 /* ----- COMPONENT ----- */
@@ -24,9 +25,7 @@ function WordCounterPage() {
 
 	return (
 		<ToolLayout tool={toolConfig} category={ReduceCategory(categoryConfig)}>
-			<div className="flex flex-col gap-6 text-zinc-400 italic">
-				Interface du compteur de mots en cours...
-			</div>
+			<WordCounterContent />
 		</ToolLayout >
 	);
 }
