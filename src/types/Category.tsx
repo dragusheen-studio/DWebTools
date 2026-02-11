@@ -13,7 +13,7 @@ import { IToolConfig } from "@/types/Tool";
 
 
 /* ----- INTERFACES ----- */
-type CategoryColor = "blue" | "green" | "purple" | "orange" | "default";
+type CategoryColor = "blue" | "green" | "purple" | "orange" | "pink" | "cyan" | "yellow" | "default";
 
 interface ICategoryConfig {
 	name: string;

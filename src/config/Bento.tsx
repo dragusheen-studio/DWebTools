@@ -1,6 +1,9 @@
 /*
 	Authors:
 	>> Nathan TIROLF - { nathan.tirolf@epitech.eu }
+
+	(„• ֊ •„)❤  <  Have a good day !
+	--U-----U------------------------
 */
 
 
@@ -21,6 +24,9 @@ const glowClasses: Record<CategoryColor, string> = {
 	green: "hover:shadow-[0_0_50px_-12px_rgba(34,197,94,0.5)] hover:border-green-500/50",
 	purple: "hover:shadow-[0_0_50px_-12px_rgba(168,85,247,0.5)] hover:border-purple-500/50",
 	orange: "hover:shadow-[0_0_50px_-12px_rgba(249,115,22,0.5)] hover:border-orange-500/50",
+	pink: "hover:shadow-[0_0_50px_-12px_rgba(246,51,154,0.5)] hover:border-pink-500/50",
+	cyan: "hover:shadow-[0_0_50px_-12px_rgba(6,182,212,0.5)] hover:border-cyan-500/50",
+	yellow: "hover:shadow-[0_0_50px_-12px_rgba(234,179,8,0.5)] hover:border-yellow-500/50",
 	default: "hover:shadow-zinc-500/30",
 };
 
@@ -29,6 +35,9 @@ const dotColor: Record<CategoryColor, string> = {
 	green: "bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]",
 	purple: "bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.8)]",
 	orange: "bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]",
+	pink: "bg-pink-500 shadow-[0_0_10px_rgba(246,51,154,0.8)]",
+	cyan: "bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.8)]",
+	yellow: "bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.8)]",
 	default: "bg-zinc-500",
 };
 
@@ -37,6 +46,9 @@ const bgGradient: Record<CategoryColor, string> = {
 	green: "group-hover:bg-green-500/5",
 	purple: "group-hover:bg-purple-500/5",
 	orange: "group-hover:bg-orange-500/5",
+	pink: "group-hover:bg-pink-500/5",
+	cyan: "group-hover:bg-cyan-500/5",
+	yellow: "group-hover:bg-yellow-500/5",
 	default: "",
 };
 
