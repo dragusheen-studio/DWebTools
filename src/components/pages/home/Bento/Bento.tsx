@@ -9,7 +9,7 @@
 "use client";
 
 /* ----- IMPORTS ----- */
-import { GetAllTools } from "@/config/PageData";
+import { GetAllBentoTools } from "@/config/PageData";
 import BentoCard from "@/components/pages/home/Bento/BentoCard";
 import { useMemo } from "react";
 
@@ -23,7 +23,8 @@ interface HomePageBentoProps {
 
 /* ----- COMPONENT ----- */
 function HomePageBento({ searchQuery, setSearchQuery }: HomePageBentoProps) {
-	const allTools = useMemo(() => GetAllTools(), []);
+	const allTools = useMemo(() => GetAllBentoTools(), []);
+
 	const filteredTools = useMemo(() => {
 		return allTools.filter((tool) => {
 			const search = searchQuery.toLowerCase();
@@ -31,6 +32,8 @@ function HomePageBento({ searchQuery, setSearchQuery }: HomePageBentoProps) {
 				tool.name.toLowerCase().includes(search) ||
 				tool.description.toLowerCase().includes(search)
 			);
+		}).sort((a, b) => {
+			return a.comingSoon === b.comingSoon ? 0 : a.comingSoon ? 1 : -1;
 		});
 	}, [searchQuery, allTools]);
 

@@ -13,7 +13,7 @@ import { IToolConfig } from "@/types/Tool";
 
 
 /* ----- INTERFACES ----- */
-type CategoryColor = "blue" | "green" | "purple" | "orange" | "default";
+type CategoryColor = "blue" | "green" | "purple" | "orange" | "pink" | "cyan" | "yellow" | "default";
 
 interface ICategoryConfig {
 	name: string;
@@ -22,9 +22,27 @@ interface ICategoryConfig {
 	tools: IToolConfig[];
 }
 
+interface ISmallCategoryConfig {
+	name: string;
+	icon: LucideIcon;
+	color: CategoryColor;
+}
+
+
+/* ----- FUNCTIONS ----- */
+function ReduceCategory(category: ICategoryConfig) {
+	return {
+		name: category.name,
+		icon: category.icon,
+		color: category.color
+	};
+}
+
 
 /* ----- EXPORTS ----- */
-export type {
-	CategoryColor,
-	ICategoryConfig,
+export {
+	type CategoryColor,
+	type ICategoryConfig,
+	type ISmallCategoryConfig,
+	ReduceCategory,
 };

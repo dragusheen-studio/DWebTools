@@ -7,7 +7,9 @@
 */
 
 /* ----- IMPORTS ----- */
-import type { LucideIcon } from "lucide-react";
+import type { LucideProps } from "lucide-react";
+import { ElementType } from "react";
+import { IconType } from "react-icons";
 
 
 /* ----- INTERFACES ----- */
@@ -17,8 +19,9 @@ interface IToolConfig {
 	name: string;
 	path: string;
 	description: string;
-	icon: LucideIcon;
+	icon: ElementType<LucideProps> | IconType;
 	size: ToolSize;
+	comingSoon: boolean;
 }
 
 

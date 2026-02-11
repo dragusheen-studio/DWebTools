@@ -12,7 +12,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { IToolConfig } from "@/types/Tool";
-import { GetBgGradient, GetDotColor, GetGlowClass, GetSizeClass } from "@/config/Bento";
+import { GetBgGradient, GetDotColor, GetGlowClassHover, GetSizeClass } from "@/config/Bento";
 import { CategoryColor } from "@/types/Category";
 
 
@@ -23,17 +23,17 @@ interface BentoCardProps extends IToolConfig {
 
 
 /* ----- COMPONENT ----- */
-function BentoCard({ name, description, icon: Icon, path, size, color }: BentoCardProps) {
+function BentoCard({ name, description, icon: Icon, path, size, color, comingSoon }: BentoCardProps) {
+	const CardWrapper = comingSoon ? "div" : Link;
+
 	return (
-		<Link
+		<CardWrapper
 			href={path}
 			className={cn(
-				"group relative flex flex-col justify-between p-8 rounded-4xl",
-				"bg-zinc-900/40 border border-zinc-800/50 backdrop-blur-md",
-				"transition-all duration-500 ease-out",
-				"hover:-translate-y-2 h-full w-full",
+				"group relative flex flex-col justify-between p-8 rounded-4xl transition-all duration-500",
+				"bg-zinc-900/40 border border-zinc-800/50 backdrop-blur-md h-full w-full",
 				GetSizeClass(size),
-				GetGlowClass(color)
+				comingSoon ? "opacity-40 cursor-not-allowed" : "hover:-translate-y-2 cursor-pointer " + GetGlowClassHover(color)
 			)}
 		>
 			<div className={cn(
@@ -46,7 +46,14 @@ function BentoCard({ name, description, icon: Icon, path, size, color }: BentoCa
 					<Icon className="w-6 h-6 text-zinc-400 group-hover:text-zinc-100 transition-colors" />
 				</div>
 
-				<div className={cn("w-2.5 h-2.5 rounded-full transition-transform duration-500 group-hover:scale-125", GetDotColor(color))} />
+				{comingSoon ? (
+					<span className="text-[8px] font-black uppercase tracking-tighter px-2 py-1 rounded-full bg-zinc-800 text-zinc-500 border border-zinc-700">
+						Soon
+					</span>
+				) : (
+					<div className={cn("w-2.5 h-2.5 rounded-full transition-transform duration-500 group-hover:scale-125", GetDotColor(color))} />
+				)}
+
 			</div>
 
 			<div className="flex flex-col gap-3 relative z-10">
@@ -59,7 +66,7 @@ function BentoCard({ name, description, icon: Icon, path, size, color }: BentoCa
 			</div>
 
 			<div className="absolute inset-0 border border-white/3 rounded-4xl pointer-events-none group-hover:border-white/8 transition-colors" />
-		</Link>
+		</CardWrapper>
 	);
 }
 
