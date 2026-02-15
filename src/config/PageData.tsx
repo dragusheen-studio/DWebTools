@@ -33,7 +33,7 @@ const AllCategories: ICategoryConfig[] = [
 		color: "blue",
 		tools: [
 			{ name: "Compteur de mots", path: "/tools/word-counter", description: "Stats détaillées : mots, signes et temps de lecture.", icon: TextCursorInput, size: "medium", comingSoon: false },
-			{ name: "Case Converter", path: "/tools/case-converter", description: "Transformez vos textes en camel, snake ou kebab case.", icon: Zap, size: "small", comingSoon: true },
+			{ name: "Case Converter", path: "/tools/case-converter", description: "Transformez vos textes en camel, snake ou kebab case.", icon: Zap, size: "small", comingSoon: false },
 			{ name: "Lorem Ipsum", path: "/tools/lorem-ipsum", description: "Générateur de texte de remplissage modulable.", icon: FileCode, size: "small", comingSoon: true },
 			{ name: "Text Diff Checker", path: "/tools/text-diff", description: "Comparez deux textes pour voir les différences.", icon: FileJson, size: "medium", comingSoon: true },
 			{ name: "Remove Duplicates", path: "/tools/remove-duplicates", description: "Nettoyeur de listes pour supprimer les doublons.", icon: List, size: "small", comingSoon: true },
