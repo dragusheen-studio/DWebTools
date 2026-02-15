@@ -8,17 +8,21 @@
 
 
 /* ----- INTERFACES ----- */
-type CaseType = "upper" | "lower" | "pascal" | "camel" | "snake" | "kebab" | "constant" | "title";
+interface ICaseType {
+	name: string;
+	transform: (wordList: string[]) => string;
+}
 
 interface ICaseConverterLine {
+	id: string;
 	input: string;
 	output: string;
-	caseType: CaseType;
+	caseType: ICaseType;
 }
 
 
 /* ----- EXPORTS ----- */
 export type {
-	CaseType,
+	ICaseType,
 	ICaseConverterLine,
 };
