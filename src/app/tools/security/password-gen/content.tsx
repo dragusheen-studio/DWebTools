@@ -13,7 +13,7 @@ import { useState } from "react";
 
 
 /* ----- COMPONENT ----- */
-function WordCounterContent() {
+function PasswordGenContent() {
 	return (
 		<div className="text-lg">
 			Générateur de mot de passe en préparation...
@@ -23,4 +23,4 @@ function WordCounterContent() {
 
 
 /* ----- EXPORT ----- */
-export default WordCounterContent;
+export default PasswordGenContent;
