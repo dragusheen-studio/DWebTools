@@ -12,12 +12,12 @@
 import { GetCategoryByTool, GetToolByPath } from "@/config/PageData";
 import { ReduceCategory } from "@/types/Category";
 import ToolLayout from "@/components/layout/ToolLayout";
-import WordCounterContent from "./content";
+import CaseConverterContent from "./content";
 
 
 /* ----- COMPONENT ----- */
-function WordCounterPage() {
-	const toolConfig = GetToolByPath("/tools/word-counter");
+function CaseConverterPage() {
+	const toolConfig = GetToolByPath("/tools/text/case-converter");
 	if (!toolConfig) return null;
 
 	const categoryConfig = GetCategoryByTool(toolConfig);
@@ -25,11 +25,11 @@ function WordCounterPage() {
 
 	return (
 		<ToolLayout tool={toolConfig} category={ReduceCategory(categoryConfig)}>
-			<WordCounterContent />
+			<CaseConverterContent />
 		</ToolLayout >
 	);
 }
 
 
 /* ----- EXPORT ----- */
-export default WordCounterPage;
+export default CaseConverterPage;
