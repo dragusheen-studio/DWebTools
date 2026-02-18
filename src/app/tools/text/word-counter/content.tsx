@@ -10,8 +10,8 @@
 
 /* ----- IMPORTS ----- */
 import { useState } from "react";
-import TextAreaSection from "@/components/pages/tools/word-counter/TextAreaSection";
-import TextStatSection from "@/components/pages/tools/word-counter/TextStatSection";
+import TextAreaSection from "@/components/pages/tools/text/word-counter/TextAreaSection";
+import TextStatSection from "@/components/pages/tools/text/word-counter/TextStatSection";
 
 
 /* ----- COMPONENT ----- */

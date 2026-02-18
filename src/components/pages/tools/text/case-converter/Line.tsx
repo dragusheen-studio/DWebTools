@@ -14,9 +14,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ICaseConverterLine, ICaseType } from "@/types/tools/text/CaseConverter";
 import { getCaseTypes } from "@/config/tools/text/CaseConverter";
-import CaseSelecter from "@/components/pages/tools/case-converter/CaseSelecter";
 import { strToWordArray } from "@/services/strToWordArray";
 import { toast } from "sonner";
+import CaseSelecter from "./CaseSelecter";
 
 
 /* ----- PROPS ----- */
