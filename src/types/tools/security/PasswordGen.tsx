@@ -7,10 +7,20 @@
 */
 
 
+/* ----- IMPORTS ----- */
+import { LucideIcon } from "lucide-react";
+
+
 /* ----- INTERFACES ----- */
-interface IPasswordOption {
-	name: string;
-	charsets: string;
+type PatternType = "text" | "date";
+type StrengthValue = "faible" | "moyen" | "fort" | "sécurisé" | "vide" | "compromis";
+
+interface IBannedPattern {
+	id: string;
+	label: string;
+	value: string;
+	type: PatternType;
+	isDefault?: boolean;
 }
 
 interface IPasswordGen {
@@ -20,9 +30,26 @@ interface IPasswordGen {
 	password: string;
 }
 
+interface IPasswordOption {
+	name: string;
+	charsets: string;
+}
+
+interface IPasswordStrength {
+	score: number;
+	label: string;
+	textColor: string;
+	rangeColor: string;
+	icon: LucideIcon;
+}
+
 
 /* ----- EXPORTS ----- */
 export type {
+	IBannedPattern,
 	IPasswordGen,
 	IPasswordOption,
+	IPasswordStrength,
+	PatternType,
+	StrengthValue,
 };
