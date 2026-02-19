@@ -46,7 +46,7 @@ const AllCategories: ICategoryConfig[] = [
 		color: "green",
 		tools: [
 			{ name: "Password Generator", path: "/tools/security/password-gen", description: "Générateur ultra-personnalisable et sécurisé.", icon: Lock, size: "small", comingSoon: false },
-			{ name: "Password Checker", path: "/tools/security/password-check", description: "Vérifie la complexité d'un password.", icon: Fingerprint, size: "small", comingSoon: true },
+			{ name: "Password Checker", path: "/tools/security/password-check", description: "Vérifie la complexité d'un password.", icon: Fingerprint, size: "small", comingSoon: false },
 			{ name: "Bcrypt Tester", path: "/tools/security/bcrypt-tester", description: "Hashage et comparaison de mots de passe Bcrypt.", icon: ShieldCheck, size: "small", comingSoon: true },
 		]
 	},
