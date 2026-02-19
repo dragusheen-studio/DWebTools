@@ -23,6 +23,12 @@ interface IBannedPattern {
 	isDefault?: boolean;
 }
 
+interface IPassphrase {
+	number: number;
+	lang: string;
+	words: string[];
+}
+
 interface IPasswordGen {
 	length: number;
 	options: IPasswordOption[];
@@ -44,9 +50,11 @@ interface IPasswordStrength {
 }
 
 
+
 /* ----- EXPORTS ----- */
 export type {
 	IBannedPattern,
+	IPassphrase,
 	IPasswordGen,
 	IPasswordOption,
 	IPasswordStrength,

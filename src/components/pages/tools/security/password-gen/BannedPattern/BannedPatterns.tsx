@@ -85,7 +85,7 @@ function BannedPatterns({ password, patterns, setPatterns, compromised, setCompr
 
 	return (
 		<div className="p-8 rounded-[2.5rem] bg-zinc-900/20 border border-zinc-800/50 flex flex-col gap-6">
-			<h3 className="text-sm font-black uppercase tracking-widest text-zinc-400">Audit de Sécurité</h3>
+			<h3 className="text-sm font-black uppercase tracking-widest text-zinc-400">Patterns à exclure</h3>
 
 			<div className="flex flex-col gap-3 w-full">
 				{patterns.map((p) => (
