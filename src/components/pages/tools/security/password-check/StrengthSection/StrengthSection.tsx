@@ -15,6 +15,7 @@ import { ICharsetStat } from "@/types/tools/security/PasswordCheck";
 import CharsetStat from "./CharsetStat";
 import StrengthBar from "./StrengthBar";
 import PasswordInput from "./PasswordInput";
+import CrackTimeDisplay from "../CrackTimeDisplay";
 
 
 /* ----- PROPS ----- */
@@ -49,7 +50,10 @@ function StrengthSection({ password, setPassword }: StrengthSectionProps) {
 			<div className="lg:col-span-2 flex flex-col gap-6">
 				<div className="p-8 rounded-[2.5rem] bg-zinc-950/40 border border-zinc-800/80 flex flex-col gap-8 shadow-2xl">
 					<PasswordInput password={password} setPassword={setPassword} />
-					<StrengthBar password={password} charsetStats={charsetStats} />
+					<div className="flex flex-col">
+						<StrengthBar password={password} charsetStats={charsetStats} />
+						<CrackTimeDisplay password={password} />
+					</div>
 				</div>
 			</div>
 
