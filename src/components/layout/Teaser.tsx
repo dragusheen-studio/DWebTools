@@ -10,7 +10,7 @@
 
 /* ----- IMPORTS ----- */
 import { ChevronDown } from "lucide-react";
-import { scrollToElement } from "@/services/scroll";
+import { scrollToElement } from "@/services/utils/scroll";
 
 
 /* ----- PROPS ----- */

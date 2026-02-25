@@ -13,7 +13,7 @@ import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { ICaseConverterLine, ICaseType } from "@/types/tools/text/CaseConverter";
 import { getCaseTypes } from "@/config/tools/text/CaseConverter";
-import { strToWordArray } from "@/services/strToWordArray";
+import { strToWordArray } from "@/services/utils/strToWordArray";
 import CaseConverterLine from "@/components/pages/tools/text/case-converter/Line";
 import GlobalActions from "@/components/pages/tools/text/case-converter/GlobalAction";
 

@@ -12,7 +12,7 @@
 import { useEffect, useRef } from "react";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { scrollToTop } from "@/services/scroll";
+import { scrollToTop } from "@/services/utils/scroll";
 
 
 /* ----- PROPS ----- */

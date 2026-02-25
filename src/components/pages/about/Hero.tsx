@@ -10,7 +10,7 @@
 
 /* ----- IMPORTS ----- */
 import { Target, Cpu, UserCircle } from "lucide-react";
-import { scrollToElement } from "@/services/scroll";
+import { scrollToElement } from "@/services/utils/scroll";
 import Teaser from "@/components/layout/Teaser";
 import FadeIn from "@/components/layout/FadeIn";
 

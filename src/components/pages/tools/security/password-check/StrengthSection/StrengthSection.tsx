@@ -16,6 +16,7 @@ import CharsetStat from "./CharsetStat";
 import StrengthBar from "./StrengthBar";
 import PasswordInput from "./PasswordInput";
 import CrackTimeDisplay from "../CrackTimeDisplay";
+import LeakCheck from "../LeakCheck";
 
 
 /* ----- PROPS ----- */
@@ -53,6 +54,7 @@ function StrengthSection({ password, setPassword }: StrengthSectionProps) {
 					<div className="flex flex-col">
 						<StrengthBar password={password} charsetStats={charsetStats} />
 						<CrackTimeDisplay password={password} />
+						<LeakCheck password={password} />
 					</div>
 				</div>
 			</div>
