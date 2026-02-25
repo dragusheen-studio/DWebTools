@@ -15,8 +15,8 @@ import { Button } from "@/components/ui/button";
 import { ICaseConverterLine, ICaseType } from "@/types/tools/text/CaseConverter";
 import { getCaseTypes } from "@/config/tools/text/CaseConverter";
 import { strToWordArray } from "@/services/utils/strToWordArray";
-import { toast } from "sonner";
 import CaseSelecter from "./CaseSelecter";
+import { copy } from "@/services/utils/copy";
 
 
 /* ----- PROPS ----- */
@@ -42,12 +42,6 @@ function CaseConverterLine({ line, updateLine, deleteLine, handleKeyDown, inputR
 		const newCase = CaseTypes.find(t => t.name === value)!;
 		handleInputUpdate(line.input, newCase);
 	};
-
-	const handleCopy = () => {
-		navigator.clipboard.writeText(line.output);
-		toast.success(`"${line.output}" Copié !`);
-	};
-
 
 	return (
 		<div className="group flex flex-col md:flex-row items-center gap-3 w-full bg-zinc-900/20 p-3 rounded-[1.5rem] border border-zinc-800/50 hover:border-zinc-700 transition-all">
@@ -76,7 +70,7 @@ function CaseConverterLine({ line, updateLine, deleteLine, handleKeyDown, inputR
 				<Button
 					variant="ghost"
 					size="icon"
-					onClick={() => handleCopy()}
+					onClick={() => copy(line.output, `"${line.output}" Copié !`)}
 					className="h-12 w-12 rounded-xl hover:bg-blue-500/10 hover:text-blue-500 shrink-0"
 				>
 					<Copy size={18} />

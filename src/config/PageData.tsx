@@ -61,7 +61,7 @@ const AllCategories: ICategoryConfig[] = [
 			{ name: "Hash Generator", path: "/tools/development/hash-generator", description: "SHA-256, MD5 et plus pour vos données.", icon: Hash, size: "small", comingSoon: true },
 			{ name: "RSA Key Pair Gen", path: "/tools/development/rsa-gen", description: "Génère des paires de clés publiques et privées.", icon: Key, size: "small", comingSoon: true },
 			{ name: "Unit Converter", path: "/tools/development/unit-converter", description: "Pixels ↔ REM / Bytes ↔ MB / HEX ↔ RGB.", icon: Cpu, size: "medium", comingSoon: true },
-			{ name: "Crontab Generator", path: "/tools/development/crontab-gen", description: "Aide visuelle pour la syntaxe Cron.", icon: Terminal, size: "small", comingSoon: true },
+			{ name: "Crontab Generator", path: "/tools/development/crontab-gen", description: "Aide visuelle pour la syntaxe Cron.", icon: Terminal, size: "small", comingSoon: false },
 		]
 	},
 	{
