@@ -47,11 +47,11 @@ export default function RootLayout({
 						<CommandPalette />
 						<main className="w-full min-h-screen">
 							{children}
+							<Analytics />
+							<SpeedInsights />
 						</main>
 					</TooltipProvider>
 				</SidebarProvider>
-				<Analytics />
-				<SpeedInsights />
 			</body>
 		</html>
 	);
