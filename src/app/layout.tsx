@@ -15,6 +15,7 @@ import AppSidebar from "@/components/layout/AppSidebar";
 import CommandPalette from "@/components/layout/CommandPalette";
 import { Toaster } from "sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Analytics } from '@vercel/analytics/next';
 
 
 /* ----- FONTS ----- */
@@ -48,6 +49,7 @@ export default function RootLayout({
 						</main>
 					</TooltipProvider>
 				</SidebarProvider>
+				<Analytics />
 			</body>
 		</html>
 	);
