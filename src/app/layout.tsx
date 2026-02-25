@@ -16,6 +16,7 @@ import CommandPalette from "@/components/layout/CommandPalette";
 import { Toaster } from "sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 
 /* ----- FONTS ----- */
@@ -50,6 +51,7 @@ export default function RootLayout({
 					</TooltipProvider>
 				</SidebarProvider>
 				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
