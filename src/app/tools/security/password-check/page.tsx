@@ -12,12 +12,12 @@
 import { GetCategoryByTool, GetToolByPath } from "@/config/PageData";
 import { ReduceCategory } from "@/types/Category";
 import ToolLayout from "@/components/layout/ToolLayout";
-import WordCounterContent from "./content";
+import PasswordCheckContent from "./content";
 
 
 /* ----- COMPONENT ----- */
-function WordCounterPage() {
-	const toolConfig = GetToolByPath("/tools/word-counter");
+function PasswordGenPage() {
+	const toolConfig = GetToolByPath("/tools/security/password-check");
 	if (!toolConfig) return null;
 
 	const categoryConfig = GetCategoryByTool(toolConfig);
@@ -25,11 +25,11 @@ function WordCounterPage() {
 
 	return (
 		<ToolLayout tool={toolConfig} category={ReduceCategory(categoryConfig)}>
-			<WordCounterContent />
+			<PasswordCheckContent />
 		</ToolLayout >
 	);
 }
 
 
 /* ----- EXPORT ----- */
-export default WordCounterPage;
+export default PasswordGenPage;

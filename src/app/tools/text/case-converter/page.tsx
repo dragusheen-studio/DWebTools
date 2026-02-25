@@ -17,7 +17,7 @@ import CaseConverterContent from "./content";
 
 /* ----- COMPONENT ----- */
 function CaseConverterPage() {
-	const toolConfig = GetToolByPath("/tools/case-converter");
+	const toolConfig = GetToolByPath("/tools/text/case-converter");
 	if (!toolConfig) return null;
 
 	const categoryConfig = GetCategoryByTool(toolConfig);

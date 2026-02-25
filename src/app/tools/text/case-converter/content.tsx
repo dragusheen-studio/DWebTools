@@ -11,11 +11,11 @@
 /* ----- IMPORTS ----- */
 import { useRef, useState } from "react";
 import { toast } from "sonner";
-import { ICaseConverterLine, ICaseType } from "@/types/tools/CaseConverter";
-import { getCaseTypes } from "@/config/tools/CaseConverter";
-import { strToWordArray } from "@/services/strToWordArray";
-import CaseConverterLine from "@/components/pages/tools/case-converter/Line";
-import GlobalActions from "@/components/pages/tools/case-converter/GlobalAction";
+import { ICaseConverterLine, ICaseType } from "@/types/tools/text/CaseConverter";
+import { getCaseTypes } from "@/config/tools/text/CaseConverter";
+import { strToWordArray } from "@/services/utils/strToWordArray";
+import CaseConverterLine from "@/components/pages/tools/text/case-converter/Line";
+import GlobalActions from "@/components/pages/tools/text/case-converter/GlobalAction";
 
 
 /* ----- COMPONENT ----- */

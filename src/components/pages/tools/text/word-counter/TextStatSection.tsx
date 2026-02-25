@@ -11,7 +11,7 @@
 /* ----- IMPORTS ----- */
 import { Clock } from "lucide-react";
 import { useMemo } from "react";
-import StatCard from "@/components/pages/tools/word-counter/StatCard";
+import StatCard from "./StatCard";
 
 
 /* ----- PROPS ----- */

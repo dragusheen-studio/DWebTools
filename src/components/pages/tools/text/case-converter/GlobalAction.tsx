@@ -13,9 +13,9 @@ import { useMemo } from "react";
 import { Plus, Trash2, Copy } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { ICaseConverterLine, ICaseType } from "@/types/tools/CaseConverter";
-import { getCaseTypes } from "@/config/tools/CaseConverter";
-import CaseSelecter from "@/components/pages/tools/case-converter/CaseSelecter";
+import { ICaseConverterLine, ICaseType } from "@/types/tools/text/CaseConverter";
+import { getCaseTypes } from "@/config/tools/text/CaseConverter";
+import CaseSelecter from "./CaseSelecter";
 
 
 interface GlobalActionsProps {

@@ -14,6 +14,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import AppSidebar from "@/components/layout/AppSidebar";
 import CommandPalette from "@/components/layout/CommandPalette";
 import { Toaster } from "sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 
 /* ----- FONTS ----- */
@@ -34,16 +35,18 @@ export default function RootLayout({
 		<html lang="fr" className="dark" suppressHydrationWarning>
 			<body className={`${outfit.variable} font-sans`} suppressHydrationWarning>
 				<SidebarProvider defaultOpen={false}>
-					<AppSidebar />
-					<div className="flex md:hidden items-center justify-between p-1 border-b backdrop-blur-md fixed top-2 left-2 z-40 rounded-lg bg-zinc-900 border border-zinc-800">
-						<SidebarTrigger />
-					</div>
+					<TooltipProvider>
+						<AppSidebar />
+						<div className="flex md:hidden items-center justify-between p-1 border-b backdrop-blur-md fixed top-2 left-2 z-40 rounded-lg bg-zinc-900 border border-zinc-800">
+							<SidebarTrigger />
+						</div>
 
-					<Toaster />
-					<CommandPalette />
-					<main className="w-full min-h-screen">
-						{children}
-					</main>
+						<Toaster />
+						<CommandPalette />
+						<main className="w-full min-h-screen">
+							{children}
+						</main>
+					</TooltipProvider>
 				</SidebarProvider>
 			</body>
 		</html>

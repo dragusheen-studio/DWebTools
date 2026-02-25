@@ -8,7 +8,7 @@
 
 
 /* ----- IMPORTS ----- */
-import { ICaseType } from "@/types/tools/CaseConverter";
+import { ICaseType } from "@/types/tools/text/CaseConverter";
 
 
 /* ----- DATAS ----- */

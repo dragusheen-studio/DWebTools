@@ -12,11 +12,11 @@
 import { Copy, ArrowRight, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ICaseConverterLine, ICaseType } from "@/types/tools/CaseConverter";
-import { getCaseTypes } from "@/config/tools/CaseConverter";
-import CaseSelecter from "@/components/pages/tools/case-converter/CaseSelecter";
-import { strToWordArray } from "@/services/strToWordArray";
+import { ICaseConverterLine, ICaseType } from "@/types/tools/text/CaseConverter";
+import { getCaseTypes } from "@/config/tools/text/CaseConverter";
+import { strToWordArray } from "@/services/utils/strToWordArray";
 import { toast } from "sonner";
+import CaseSelecter from "./CaseSelecter";
 
 
 /* ----- PROPS ----- */
