@@ -12,11 +12,11 @@ import { Copy, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
-import { toast } from "sonner";
 import { useEffect, useState } from "react";
 import { IPasswordStrength } from "@/types/tools/security/PasswordGen";
 import { cn } from "@/lib/utils";
 import { getStrengthFromPassword } from "@/config/tools/security/PasswordGen";
+import { copy } from "@/services/utils/copy";
 
 
 /* ----- PROPS ----- */
@@ -35,12 +35,6 @@ function PasswordDisplay({ password, onRegenerate, compromised, selectedOptsCoun
 	useEffect(() => {
 		setStrength(getStrengthFromPassword(password, selectedOptsCount, compromised));
 	}, [password, compromised, selectedOptsCount]);
-
-	const handleCopy = () => {
-		if (!password) return;
-		navigator.clipboard.writeText(password);
-		toast.success("Mot de passe copié !");
-	};
 
 	return (
 		<div className="p-8 rounded-[2.5rem] bg-zinc-950/40 border border-zinc-800/80 flex flex-col gap-6 shadow-2xl">
@@ -67,7 +61,7 @@ function PasswordDisplay({ password, onRegenerate, compromised, selectedOptsCoun
 				<Progress value={strength.score} className="h-1.5 bg-zinc-800" indicatorClassName={strength.rangeColor} />
 			</div>
 
-			<Button onClick={handleCopy} className="w-full h-14 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-black uppercase tracking-widest gap-3 shadow-lg shadow-blue-500/20">
+			<Button onClick={() => copy(password, "Mot de passe copié !")} className="w-full h-14 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-black uppercase tracking-widest gap-3 shadow-lg shadow-blue-500/20">
 				<Copy size={18} /> Copier
 			</Button>
 		</div>

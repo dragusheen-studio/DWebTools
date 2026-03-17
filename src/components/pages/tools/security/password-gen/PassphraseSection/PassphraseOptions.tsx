@@ -13,8 +13,8 @@ import { RefreshCw, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { toast } from "sonner";
 import { IPassphrase } from "@/types/tools/security/PasswordGen";
+import { copy } from "@/services/utils/copy";
 
 
 /* ----- PROPS ----- */
@@ -28,11 +28,6 @@ interface PassphraseOptionsProps {
 
 /* ----- COMPONENT ----- */
 function PassphraseOptions({ loading, passphrase, onConfigChange, handleGenerate }: PassphraseOptionsProps) {
-	const handleCopy = () => {
-		navigator.clipboard.writeText(passphrase.words.join(" "));
-		toast.success("Passphrase copiée !");
-	};
-
 	return (
 		<div className="flex flex-wrap gap-4">
 			<div className="flex items-center gap-3 bg-zinc-950/40 p-2 px-4 rounded-xl border border-zinc-800">
@@ -67,7 +62,7 @@ function PassphraseOptions({ loading, passphrase, onConfigChange, handleGenerate
 			</Button>
 
 			<Button
-				onClick={handleCopy}
+				onClick={() => copy(passphrase.words.join(" "), "Passphrase copiée !")}
 				disabled={loading}
 				className="bg-zinc-600 hover:bg-zinc-500 text-white rounded-xl h-10 px-6 font-bold uppercase text-[10px] tracking-widest shadow-lg shadow-zinc-500/20"
 			>

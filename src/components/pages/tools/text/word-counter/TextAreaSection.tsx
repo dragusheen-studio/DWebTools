@@ -8,9 +8,9 @@
 
 "use client";
 
+import { copy } from "@/services/utils/copy";
 /* ----- IMPORTS ----- */
 import { Trash2, Copy } from "lucide-react";
-import { toast } from "sonner";
 
 
 /* ----- PROPS ----- */
@@ -22,12 +22,6 @@ interface TextAreaSectionProp {
 
 /* ----- COMPONENT ----- */
 function TextAreaSection({ text, setText }: TextAreaSectionProp) {
-	const handleCopy = () => {
-		if (!text) return;
-		navigator.clipboard.writeText(text);
-		toast.success("Texte copié !");
-	};
-
 	return (
 		<div className="lg:col-span-2 flex flex-col gap-4">
 			<div className="relative group">
@@ -47,7 +41,7 @@ function TextAreaSection({ text, setText }: TextAreaSectionProp) {
 					<Trash2 size={14} /> Effacer
 				</button>
 				<button
-					onClick={handleCopy}
+					onClick={() => copy(text, "Texte copié !")}
 					className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-blue-400 hover:border-blue-500/30 transition-all text-xs font-bold uppercase tracking-widest"
 				>
 					<Copy size={14} /> Copier

@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { ICaseConverterLine, ICaseType } from "@/types/tools/text/CaseConverter";
 import { getCaseTypes } from "@/config/tools/text/CaseConverter";
 import CaseSelecter from "./CaseSelecter";
+import { copy } from "@/services/utils/copy";
 
 
 interface GlobalActionsProps {
@@ -50,8 +51,7 @@ function GlobalActions({ lines, updateAllTypes, resetLines, addLine }: GlobalAct
 
 		if (!allOutput) return toast.error("Rien à copier !");
 
-		navigator.clipboard.writeText(allOutput);
-		toast.success("Toutes les lignes copiées !");
+		copy(allOutput, "Toutes les lignes copiées !")
 	};
 
 	return (
