@@ -1,6 +1,9 @@
 /*
 	Authors:
 	>> Nathan TIROLF - { nathan.tirolf@epitech.eu }
+
+	(„• ֊ •„)❤  <  Have a good day !
+	--U-----U------------------------
 */
 
 "use client";
@@ -11,6 +14,7 @@ import yaml from "js-yaml";
 import SwitchButton from "@/components/custom-ui/SwitchButton";
 import LeftArea from "@/components/pages/tools/development/json-yaml/LeftArea";
 import RightArea from "@/components/pages/tools/development/json-yaml/RightArea";
+
 
 /* ----- COMPONENT ----- */
 function JsonYamlContent() {
@@ -63,4 +67,6 @@ function JsonYamlContent() {
 	);
 }
 
+
+/* ----- EXPORT ----- */
 export default JsonYamlContent;
