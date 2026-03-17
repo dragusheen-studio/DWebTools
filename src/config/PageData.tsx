@@ -57,7 +57,7 @@ const AllCategories: ICategoryConfig[] = [
 		tools: [
 			{ name: "Regex Tester", path: "/tools/development/regex-tester", description: "Testez et expliquez vos expressions régulières.", icon: Search, size: "medium", comingSoon: true },
 			{ name: "Base64 Converter", path: "/tools/development/base64", description: "Encodez et décodez vos textes en Base64.", icon: Languages, size: "large", comingSoon: false },
-			{ name: "JSON ↔ YAML", path: "/tools/development/json-yaml", description: "Convertissez vos fichiers de config instantanément.", icon: File, size: "small", comingSoon: true },
+			{ name: "JSON ↔ YAML", path: "/tools/development/json-yaml", description: "Convertissez vos fichiers de config instantanément.", icon: File, size: "small", comingSoon: false },
 			{ name: "Hash Generator", path: "/tools/development/hash-generator", description: "SHA-256, MD5 et plus pour vos données.", icon: Hash, size: "small", comingSoon: true },
 			{ name: "RSA Key Pair Gen", path: "/tools/development/rsa-gen", description: "Génère des paires de clés publiques et privées.", icon: Key, size: "small", comingSoon: true },
 			{ name: "Unit Converter", path: "/tools/development/unit-converter", description: "Pixels ↔ REM / Bytes ↔ MB / HEX ↔ RGB.", icon: Cpu, size: "medium", comingSoon: true },

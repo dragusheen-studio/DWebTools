@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 /* ----- PROPS ----- */
 interface Props {
 	handleSwitch: () => void;
-	mode: "encode" | "decode";
+	mode: boolean
 }
 
 
@@ -29,7 +29,7 @@ function SwitchButton({ handleSwitch, mode }: Props) {
 				onClick={handleSwitch}
 				className="h-14 w-14 rounded-2xl bg-blue-600 hover:bg-blue-500 shadow-xl shadow-blue-500/20 active:scale-90 transition-all"
 			>
-				<ArrowRightLeft size={24} className={cn("transition-transform duration-500", mode === "decode" && "rotate-180")} />
+				<ArrowRightLeft size={24} className={cn("transition-transform duration-500", mode && "rotate-180")} />
 			</Button>
 		</div>
 	);

@@ -10,7 +10,7 @@
 
 /* ----- IMPORTS ----- */
 import { useState, useEffect } from "react";
-import SwitchButton from "@/components/pages/tools/development/base64/SwitchButton";
+import SwitchButton from "@/components/custom-ui/SwitchButton";
 import LeftArea from "@/components/pages/tools/development/base64/LeftArea";
 import RightArea from "@/components/pages/tools/development/base64/RightArea";
 
@@ -62,7 +62,7 @@ function Base64Content() {
 	return (
 		<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto w-full pb-20 px-4 relative">
 			<LeftArea mode={mode} clear={clear} input={input} setInput={setInput} />
-			<SwitchButton handleSwitch={handleSwitch} mode={mode} />
+			<SwitchButton handleSwitch={handleSwitch} mode={mode == "decode"} />
 			<RightArea mode={mode} output={output} error={error} />
 		</div>
 	);
