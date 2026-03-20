@@ -32,7 +32,8 @@ Cette plateforme propose une expérience **minimaliste**, **performante** et **u
 * **Crontab Generator** : Aide visuelle interactive pour la syntaxe Cron avec traduction humaine.
 
 ### 🎨 Catégorie : Design
-* **CSS Glassmorphism** : Générateur d'effets de verre dépoli en temps réel avec prévisualisation animée. Supporte les exports en **CSS RAW**, **Tailwind CSS** et **React Object Style**.
+* **CSS Glassmorphism** : Générateur d'effets de verre dépoli en temps réel avec prévisualisation animée. Supporte les exports en `CSS RAW`, `Tailwind CSS` et `React Object Style`.
+* **Color Variations** : Générateur de déclinaisons harmonieuses (triades, complémentaires, analogues) basées sur la roue chromatique HSL à partir d'une couleur maître.
 
 ---
 

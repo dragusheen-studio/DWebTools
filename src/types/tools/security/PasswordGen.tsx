@@ -11,10 +11,12 @@
 import { LucideIcon } from "lucide-react";
 
 
-/* ----- INTERFACES ----- */
+/* ----- TYPES ----- */
 type PatternType = "text" | "date";
 type StrengthValue = "faible" | "moyen" | "fort" | "sécurisé" | "vide" | "compromis";
 
+
+/* ----- INTERFACES ----- */
 interface IBannedPattern {
 	id: string;
 	label: string;

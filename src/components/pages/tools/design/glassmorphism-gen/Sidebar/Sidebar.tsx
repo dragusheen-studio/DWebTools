@@ -12,7 +12,7 @@
 import { RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IGlassmorphismConfig } from "@/types/tools/design/GlassmorphismGen";
-import ColorPicker from "./ColorPicker";
+import ColorPicker from "../../../../../custom-ui/ColorPicker";
 import NumericalSlider from "./NumericalSlider";
 import PercentageSlider from "./PercentageSlider";
 
@@ -41,7 +41,7 @@ function Sidebar({ config, setConfig, reset }: Props) {
 				</div>
 
 				<div className="space-y-8">
-					<ColorPicker color={config.color} setColor={(color) => setConfig({ ...config, color })} />
+					<ColorPicker color={config.color} setColor={(color) => setConfig({ ...config, color })} label="Couleur du fond" />
 					<NumericalSlider label="Flou (Pixels)" value={config.blur} setValue={(value) => setConfig({ ...config, blur: value })} max={40} />
 					<PercentageSlider label="Opacité Fond" value={config.opacity} setValue={(value) => setConfig({ ...config, opacity: value })} />
 					<PercentageSlider label="Opacité Bordure" value={config.borderOpacity} setValue={(value) => setConfig({ ...config, borderOpacity: value })} />
