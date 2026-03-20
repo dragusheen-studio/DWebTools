@@ -12,11 +12,11 @@
 import { GetCategoryByTool, GetToolByPath } from "@/config/PageData";
 import { ReduceCategory } from "@/types/Category";
 import ToolLayout from "@/components/layout/ToolLayout";
-import CronTabGenContent from "./content";
+import Content from "./content";
 
 
 /* ----- COMPONENT ----- */
-function CronTabGenPage() {
+function Page() {
 	const toolConfig = GetToolByPath("/tools/development/crontab-gen");
 	if (!toolConfig) return null;
 
@@ -25,11 +25,11 @@ function CronTabGenPage() {
 
 	return (
 		<ToolLayout tool={toolConfig} category={ReduceCategory(categoryConfig)}>
-			<CronTabGenContent />
+			<Content />
 		</ToolLayout >
 	);
 }
 
 
 /* ----- EXPORT ----- */
-export default CronTabGenPage;
+export default Page;

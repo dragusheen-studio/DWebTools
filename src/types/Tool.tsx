@@ -21,7 +21,7 @@ interface IToolConfig {
 	description: string;
 	icon: ElementType<LucideProps> | IconType;
 	size: ToolSize;
-	comingSoon: boolean;
+	comingSoon?: boolean;
 }
 
 

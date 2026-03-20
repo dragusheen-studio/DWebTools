@@ -17,7 +17,7 @@ import Content from "./content";
 
 /* ----- COMPONENT ----- */
 function Page() {
-	const toolConfig = GetToolByPath("/tools/development/json-yaml");
+	const toolConfig = GetToolByPath("/tools/text/text-diff");
 	if (!toolConfig) return null;
 
 	const categoryConfig = GetCategoryByTool(toolConfig);

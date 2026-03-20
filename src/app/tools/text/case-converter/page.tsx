@@ -12,11 +12,11 @@
 import { GetCategoryByTool, GetToolByPath } from "@/config/PageData";
 import { ReduceCategory } from "@/types/Category";
 import ToolLayout from "@/components/layout/ToolLayout";
-import CaseConverterContent from "./content";
+import Content from "./content";
 
 
 /* ----- COMPONENT ----- */
-function CaseConverterPage() {
+function Page() {
 	const toolConfig = GetToolByPath("/tools/text/case-converter");
 	if (!toolConfig) return null;
 
@@ -25,11 +25,11 @@ function CaseConverterPage() {
 
 	return (
 		<ToolLayout tool={toolConfig} category={ReduceCategory(categoryConfig)}>
-			<CaseConverterContent />
+			<Content />
 		</ToolLayout >
 	);
 }
 
 
 /* ----- EXPORT ----- */
-export default CaseConverterPage;
+export default Page;

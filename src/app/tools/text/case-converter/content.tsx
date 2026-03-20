@@ -19,7 +19,7 @@ import GlobalActions from "@/components/pages/tools/text/case-converter/GlobalAc
 
 
 /* ----- COMPONENT ----- */
-function CaseConverterContent() {
+function Content() {
 	const CaseTypes = getCaseTypes();
 	const defaultLines: ICaseConverterLine[] = [{ id: crypto.randomUUID(), input: "", output: "", caseType: CaseTypes[2] }]
 	const [lines, setLines] = useState<(ICaseConverterLine & { id: string })[]>(defaultLines);
@@ -138,4 +138,4 @@ function CaseConverterContent() {
 
 
 /* ----- EXPORT ----- */
-export default CaseConverterContent;
+export default Content;

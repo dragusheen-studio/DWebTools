@@ -16,7 +16,7 @@ import GhostSearchBar from "@/components/pages/home/GhostSearchBar";
 
 
 /* ----- COMPONENT ----- */
-function HomePage() {
+function Page() {
 	const [searchQuery, setSearchQuery] = useState<string>("");
 	const [isStickyVisible, setIsStickyVisible] = useState(false);
 	const heroSearchRef = useRef<HTMLDivElement>(null);
@@ -52,4 +52,4 @@ function HomePage() {
 
 
 /* ----- EXPORT ----- */
-export default HomePage;
+export default Page;

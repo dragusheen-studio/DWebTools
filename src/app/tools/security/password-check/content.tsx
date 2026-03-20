@@ -13,7 +13,7 @@ import { useState } from "react";
 import StrengthSection from "@/components/pages/tools/security/password-check/StrengthSection/StrengthSection";
 
 /* ----- COMPONENT ----- */
-function PasswordCheckContent() {
+function Content() {
 	const [password, setPassword] = useState("");
 
 	return (
@@ -24,4 +24,4 @@ function PasswordCheckContent() {
 }
 
 /* ----- EXPORT ----- */
-export default PasswordCheckContent;
+export default Content;

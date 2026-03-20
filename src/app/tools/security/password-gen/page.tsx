@@ -12,11 +12,11 @@
 import { GetCategoryByTool, GetToolByPath } from "@/config/PageData";
 import { ReduceCategory } from "@/types/Category";
 import ToolLayout from "@/components/layout/ToolLayout";
-import PasswordGenContent from "./content";
+import Content from "./content";
 
 
 /* ----- COMPONENT ----- */
-function PasswordGenPage() {
+function Page() {
 	const toolConfig = GetToolByPath("/tools/security/password-gen");
 	if (!toolConfig) return null;
 
@@ -25,11 +25,11 @@ function PasswordGenPage() {
 
 	return (
 		<ToolLayout tool={toolConfig} category={ReduceCategory(categoryConfig)}>
-			<PasswordGenContent />
+			<Content />
 		</ToolLayout >
 	);
 }
 
 
 /* ----- EXPORT ----- */
-export default PasswordGenPage;
+export default Page;
