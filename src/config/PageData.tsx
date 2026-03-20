@@ -100,7 +100,7 @@ const AllCategories: ICategoryConfig[] = [
 		icon: Palette,
 		color: "pink",
 		tools: [
-			{ name: "CSS Glassmorphism", path: "/tools/design/glassmorphism-gen", description: "Générateur de code CSS pour effets de flou.", icon: Layout, size: "small", comingSoon: true },
+			{ name: "CSS Glassmorphism", path: "/tools/design/glassmorphism-gen", description: "Générateur de code CSS pour effets de flou.", icon: Layout, size: "small" },
 			{ name: "Color Palette", path: "/tools/design/color-palette", description: "Créez des palettes de couleurs harmonieuses.", icon: Palette, size: "medium", comingSoon: true },
 			{ name: "Visual Identity", path: "/tools/design/visual-identity", description: "Visualisez vos choix de polices et couleurs.", icon: TextInitial, size: "large", comingSoon: true },
 			{ name: "Sprite Sheet Maker", path: "/tools/design/sprite-sheet-maker", description: "Permet de grouper des sprites en sprite sheet.", icon: Sheet, size: "medium", comingSoon: true },

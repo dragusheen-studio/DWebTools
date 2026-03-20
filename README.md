@@ -31,6 +31,9 @@ Cette plateforme propose une expérience **minimaliste**, **performante** et **u
 * **JSON ↔ YAML** : Conversion bidirectionnelle intelligente avec gestion d'erreurs de parsing.
 * **Crontab Generator** : Aide visuelle interactive pour la syntaxe Cron avec traduction humaine.
 
+### 🎨 Catégorie : Design
+* **CSS Glassmorphism** : Générateur d'effets de verre dépoli en temps réel avec prévisualisation animée. Supporte les exports en **CSS RAW**, **Tailwind CSS** et **React Object Style**.
+
 ---
 
 ## 🛠️ Stack Technique
