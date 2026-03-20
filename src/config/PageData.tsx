@@ -13,9 +13,9 @@ import { IPageConfig } from "@/types/PageData";
 import { IToolConfig } from "@/types/Tool";
 import {
 	Home, Info, TextCursorInput, ShieldCheck, Code2, ImageIcon, Zap, FileJson, Hash, Database,
-	Terminal, Cpu, Search, Lock, List, SortAsc, Fingerprint, TextInitial, Link, Layout,
-	Palette, QrCode, Maximize, Scaling, FileCode, Languages, Key, Globe, Network, FileSearch,
-	Activity, FileOutput, File
+	Terminal, Cpu, Search, Lock, List, Fingerprint, TextInitial, Link, Layout, Palette,
+	QrCode, Maximize, Scaling, FileCode, Languages, Key, Globe, Network, FileSearch, Activity,
+	FileOutput, File, StickyNote, Sheet
 } from "lucide-react";
 import { FaYoutube } from "react-icons/fa";
 
@@ -36,8 +36,7 @@ const AllCategories: ICategoryConfig[] = [
 			{ name: "Case Converter", path: "/tools/text/case-converter", description: "Transformez vos textes en camel, snake ou kebab case.", icon: Zap, size: "small", comingSoon: false },
 			{ name: "Lorem Ipsum", path: "/tools/text/lorem-ipsum", description: "Générateur de texte de remplissage modulable.", icon: FileCode, size: "small", comingSoon: false },
 			{ name: "Text Diff Checker", path: "/tools/text/text-diff", description: "Comparez deux textes pour voir les différences.", icon: FileJson, size: "medium", comingSoon: true },
-			{ name: "Remove Duplicates", path: "/tools/text/remove-duplicates", description: "Nettoyeur de listes pour supprimer les doublons.", icon: List, size: "small", comingSoon: true },
-			{ name: "Alphabetical Order", path: "/tools/text/alphabetical-order", description: "Organise une liste en ordre alphabétique (A-Z / Z-A).", icon: SortAsc, size: "small", comingSoon: true },
+			{ name: "List Cleaner", path: "/tools/text/list-cleaner", description: "Supprimez les doublons et triez vos listes instantanément.", icon: List, size: "small", comingSoon: false },
 		]
 	},
 	{
@@ -103,7 +102,9 @@ const AllCategories: ICategoryConfig[] = [
 		tools: [
 			{ name: "CSS Glassmorphism", path: "/tools/design/glassmorphism-gen", description: "Générateur de code CSS pour effets de flou.", icon: Layout, size: "small", comingSoon: true },
 			{ name: "Color Palette", path: "/tools/design/color-palette", description: "Créez des palettes de couleurs harmonieuses.", icon: Palette, size: "medium", comingSoon: true },
-			{ name: "Visual Identity", path: "/tools/design/visual-identity", description: "Visualisez vos choix de polices et couleurs.", icon: TextInitial, size: "large", comingSoon: true }
+			{ name: "Visual Identity", path: "/tools/design/visual-identity", description: "Visualisez vos choix de polices et couleurs.", icon: TextInitial, size: "large", comingSoon: true },
+			{ name: "Sprite Sheet Maker", path: "/tools/design/sprite-sheet-maker", description: "Permet de grouper des sprites en sprite sheet.", icon: Sheet, size: "medium", comingSoon: true },
+			{ name: "Sprite Sheet Cuter", path: "/tools/design/sprite-sheet-cuter", description: "Permet de découper une sprite sheet en image.", icon: StickyNote, size: "medium", comingSoon: true }
 		]
 	}
 ];
