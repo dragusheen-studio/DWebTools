@@ -128,7 +128,7 @@ function GetActiveBentoTools(comingSoon: boolean) {
 	return tools.filter(tool => tool.comingSoon === comingSoon);
 }
 
-function GetActiveToolsInCategory(category: ICategoryConfig, comingSoon: boolean) {
+function GetActiveToolsInCategory(category: ICategoryConfig, comingSoon?: boolean) {
 	const tools = category.tools;
 	return tools.filter(tool => tool.comingSoon === comingSoon);
 }

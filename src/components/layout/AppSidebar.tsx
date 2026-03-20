@@ -100,7 +100,7 @@ function AppSidebar() {
 											</CollapsibleTrigger>
 											<CollapsibleContent>
 												<SidebarMenuSub>
-													{GetActiveToolsInCategory(category, false).map((tool) => (
+													{GetActiveToolsInCategory(category).map((tool) => (
 														<SidebarMenuSubItem key={tool.name}>
 															<SidebarMenuSubButton asChild className="rounded-xl h-9">
 																<Link href={tool.path}>
