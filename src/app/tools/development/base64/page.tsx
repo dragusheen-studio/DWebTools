@@ -12,11 +12,11 @@
 import { GetCategoryByTool, GetToolByPath } from "@/config/PageData";
 import { ReduceCategory } from "@/types/Category";
 import ToolLayout from "@/components/layout/ToolLayout";
-import Base64Content from "./content";
+import Content from "./content";
 
 
 /* ----- COMPONENT ----- */
-function Base64Page() {
+function Page() {
 	const toolConfig = GetToolByPath("/tools/development/base64");
 	if (!toolConfig) return null;
 
@@ -25,11 +25,11 @@ function Base64Page() {
 
 	return (
 		<ToolLayout tool={toolConfig} category={ReduceCategory(categoryConfig)}>
-			<Base64Content />
+			<Content />
 		</ToolLayout >
 	);
 }
 
 
 /* ----- EXPORT ----- */
-export default Base64Page;
+export default Page;

@@ -15,7 +15,7 @@ import ParamsSidebar from "@/components/pages/tools/text/lorem-ipsum/ParamsSideb
 
 
 /* ----- COMPONENT ----- */
-function LoremIpsumContent() {
+function Content() {
 	const [asHtml, setAsHtml] = useState(false);
 	const [textChunks, setTextChunks] = useState<string[]>([]);
 
@@ -29,4 +29,4 @@ function LoremIpsumContent() {
 
 
 /* ----- EXPORT ----- */
-export default LoremIpsumContent;
+export default Content;

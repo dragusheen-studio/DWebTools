@@ -15,7 +15,7 @@ import TextStatSection from "@/components/pages/tools/text/word-counter/TextStat
 
 
 /* ----- COMPONENT ----- */
-function WordCounterContent() {
+function Content() {
 	const [text, setText] = useState("");
 
 	return (
@@ -28,4 +28,4 @@ function WordCounterContent() {
 
 
 /* ----- EXPORT ----- */
-export default WordCounterContent;
+export default Content;

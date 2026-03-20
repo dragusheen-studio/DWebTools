@@ -15,7 +15,7 @@ import ResultArea from "@/components/pages/tools/text/text-diff/ResultArea/Resul
 
 
 /* ----- COMPONENT ----- */
-function TextDiffContent() {
+function Content() {
 	const [textA, setTextA] = useState("");
 	const [textB, setTextB] = useState("");
 
@@ -32,4 +32,4 @@ function TextDiffContent() {
 
 
 /* ----- EXPORT ----- */
-export default TextDiffContent;
+export default Content;

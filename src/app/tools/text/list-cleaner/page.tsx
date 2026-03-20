@@ -12,11 +12,11 @@
 import { GetCategoryByTool, GetToolByPath } from "@/config/PageData";
 import { ReduceCategory } from "@/types/Category";
 import ToolLayout from "@/components/layout/ToolLayout";
-import ListCleanerContent from "./content";
+import Content from "./content";
 
 
 /* ----- COMPONENT ----- */
-function WordCounterPage() {
+function Page() {
 	const toolConfig = GetToolByPath("/tools/text/list-cleaner");
 	if (!toolConfig) return null;
 
@@ -25,11 +25,11 @@ function WordCounterPage() {
 
 	return (
 		<ToolLayout tool={toolConfig} category={ReduceCategory(categoryConfig)}>
-			<ListCleanerContent />
+			<Content />
 		</ToolLayout >
 	);
 }
 
 
 /* ----- EXPORT ----- */
-export default WordCounterPage;
+export default Page;

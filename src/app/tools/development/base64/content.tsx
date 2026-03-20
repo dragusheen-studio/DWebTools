@@ -16,7 +16,7 @@ import RightArea from "@/components/pages/tools/development/base64/RightArea";
 
 
 /* ----- COMPONENT ----- */
-function Base64Content() {
+function Content() {
 	const [mode, setMode] = useState<"encode" | "decode">("encode");
 	const [input, setInput] = useState("");
 	const [output, setOutput] = useState("");
@@ -70,4 +70,4 @@ function Base64Content() {
 
 
 /* ----- EXPORT ----- */
-export default Base64Content;
+export default Content;

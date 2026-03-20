@@ -12,11 +12,11 @@
 import { GetCategoryByTool, GetToolByPath } from "@/config/PageData";
 import { ReduceCategory } from "@/types/Category";
 import ToolLayout from "@/components/layout/ToolLayout";
-import TextDiffContent from "./content";
+import Content from "./content";
 
 
 /* ----- COMPONENT ----- */
-function TextDiffPage() {
+function Page() {
 	const toolConfig = GetToolByPath("/tools/text/text-diff");
 	if (!toolConfig) return null;
 
@@ -25,11 +25,11 @@ function TextDiffPage() {
 
 	return (
 		<ToolLayout tool={toolConfig} category={ReduceCategory(categoryConfig)}>
-			<TextDiffContent />
+			<Content />
 		</ToolLayout >
 	);
 }
 
 
 /* ----- EXPORT ----- */
-export default TextDiffPage;
+export default Page;

@@ -18,7 +18,7 @@ import PassphraseSection from "@/components/pages/tools/security/password-gen/Pa
 
 
 /* ----- COMPONENT ----- */
-function PasswordGenContent() {
+function Content() {
 	const allOptions = getPasswordOptions();
 	const [password, setPassword] = useState("");
 	const [length, setLength] = useState(16);
@@ -73,4 +73,4 @@ function PasswordGenContent() {
 
 
 /* ----- EXPORT ----- */
-export default PasswordGenContent;
+export default Content;

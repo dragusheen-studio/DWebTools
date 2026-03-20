@@ -17,7 +17,7 @@ import RightArea from "@/components/pages/tools/development/json-yaml/RightArea"
 
 
 /* ----- COMPONENT ----- */
-function JsonYamlContent() {
+function Content() {
 	const [input, setInput] = useState("");
 	const [output, setOutput] = useState("");
 	const [mode, setMode] = useState<"json-to-yaml" | "yaml-to-json">("json-to-yaml");
@@ -69,4 +69,4 @@ function JsonYamlContent() {
 
 
 /* ----- EXPORT ----- */
-export default JsonYamlContent;
+export default Content;

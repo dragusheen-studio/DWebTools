@@ -15,7 +15,7 @@ import ConfigArea from "@/components/pages/tools/text/list-cleaner/ConfigArea/Co
 
 
 /* ----- COMPONENT ----- */
-function ListCleanerContent() {
+function Content() {
 	const [input, setInput] = useState("");
 	const [output, setOutput] = useState("");
 	const [count, setCount] = useState(0);
@@ -31,4 +31,4 @@ function ListCleanerContent() {
 
 
 /* ----- EXPORT ----- */
-export default ListCleanerContent;
+export default Content;

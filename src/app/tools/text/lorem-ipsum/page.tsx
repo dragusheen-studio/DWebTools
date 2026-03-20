@@ -12,11 +12,11 @@
 import { GetCategoryByTool, GetToolByPath } from "@/config/PageData";
 import { ReduceCategory } from "@/types/Category";
 import ToolLayout from "@/components/layout/ToolLayout";
-import LoremIpsumContent from "./content";
+import Content from "./content";
 
 
 /* ----- COMPONENT ----- */
-function WordCounterPage() {
+function Page() {
 	const toolConfig = GetToolByPath("/tools/text/lorem-ipsum");
 	if (!toolConfig) return null;
 
@@ -25,11 +25,11 @@ function WordCounterPage() {
 
 	return (
 		<ToolLayout tool={toolConfig} category={ReduceCategory(categoryConfig)}>
-			<LoremIpsumContent />
+			<Content />
 		</ToolLayout >
 	);
 }
 
 
 /* ----- EXPORT ----- */
-export default WordCounterPage;
+export default Page;

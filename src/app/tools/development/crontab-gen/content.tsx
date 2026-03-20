@@ -16,7 +16,7 @@ import CronTabGenConfiguration from "@/components/pages/tools/development/cronta
 
 
 /* ----- COMPONENT ----- */
-function CronTabGenContent() {
+function Content() {
 	const [cronData, setCronData] = useState<ICronDatas>({ minutes: "*", hours: "*", days: "*", months: "*", weekDays: "*" });
 	const [command, setCommand] = useState("echo \"Hello World\"");
 	const [error, setError] = useState<string | null>(null);
@@ -33,4 +33,4 @@ function CronTabGenContent() {
 
 
 /* ----- EXPORT ----- */
-export default CronTabGenContent;
+export default Content;
