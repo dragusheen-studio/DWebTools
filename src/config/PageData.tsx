@@ -32,11 +32,11 @@ const AllCategories: ICategoryConfig[] = [
 		icon: TextCursorInput,
 		color: "blue",
 		tools: [
-			{ name: "Word Counter", path: "/tools/text/word-counter", description: "Stats détaillées : mots, signes et temps de lecture.", icon: TextCursorInput, size: "medium", comingSoon: false },
-			{ name: "Case Converter", path: "/tools/text/case-converter", description: "Transformez vos textes en camel, snake ou kebab case.", icon: Zap, size: "small", comingSoon: false },
-			{ name: "Lorem Ipsum", path: "/tools/text/lorem-ipsum", description: "Générateur de texte de remplissage modulable.", icon: FileCode, size: "small", comingSoon: false },
-			{ name: "Text Diff Checker", path: "/tools/text/text-diff", description: "Comparez deux textes pour voir les différences.", icon: FileJson, size: "medium", comingSoon: true },
-			{ name: "List Cleaner", path: "/tools/text/list-cleaner", description: "Supprimez les doublons et triez vos listes instantanément.", icon: List, size: "small", comingSoon: false },
+			{ name: "Word Counter", path: "/tools/text/word-counter", description: "Stats détaillées : mots, signes et temps de lecture.", icon: TextCursorInput, size: "medium" },
+			{ name: "Case Converter", path: "/tools/text/case-converter", description: "Transformez vos textes en camel, snake ou kebab case.", icon: Zap, size: "small" },
+			{ name: "Lorem Ipsum", path: "/tools/text/lorem-ipsum", description: "Générateur de texte de remplissage modulable.", icon: FileCode, size: "small" },
+			{ name: "Text Diff Checker", path: "/tools/text/text-diff", description: "Comparez deux textes pour voir les différences.", icon: FileJson, size: "medium" },
+			{ name: "List Cleaner", path: "/tools/text/list-cleaner", description: "Supprimez les doublons et triez vos listes instantanément.", icon: List, size: "small" },
 		]
 	},
 	{
@@ -44,8 +44,8 @@ const AllCategories: ICategoryConfig[] = [
 		icon: ShieldCheck,
 		color: "green",
 		tools: [
-			{ name: "Password Generator", path: "/tools/security/password-gen", description: "Générateur ultra-personnalisable et sécurisé.", icon: Lock, size: "small", comingSoon: false },
-			{ name: "Password Checker", path: "/tools/security/password-check", description: "Vérifie la complexité d'un password.", icon: Fingerprint, size: "small", comingSoon: false },
+			{ name: "Password Generator", path: "/tools/security/password-gen", description: "Générateur ultra-personnalisable et sécurisé.", icon: Lock, size: "small" },
+			{ name: "Password Checker", path: "/tools/security/password-check", description: "Vérifie la complexité d'un password.", icon: Fingerprint, size: "small" },
 			{ name: "Bcrypt Tester", path: "/tools/security/bcrypt-tester", description: "Hashage et comparaison de mots de passe Bcrypt.", icon: ShieldCheck, size: "small", comingSoon: true },
 		]
 	},
@@ -55,12 +55,12 @@ const AllCategories: ICategoryConfig[] = [
 		color: "purple",
 		tools: [
 			{ name: "Regex Tester", path: "/tools/development/regex-tester", description: "Testez et expliquez vos expressions régulières.", icon: Search, size: "medium", comingSoon: true },
-			{ name: "Base64 Converter", path: "/tools/development/base64", description: "Encodez et décodez vos textes en Base64.", icon: Languages, size: "large", comingSoon: false },
-			{ name: "JSON ↔ YAML", path: "/tools/development/json-yaml", description: "Convertissez vos fichiers de config instantanément.", icon: File, size: "small", comingSoon: false },
+			{ name: "Base64 Converter", path: "/tools/development/base64", description: "Encodez et décodez vos textes en Base64.", icon: Languages, size: "large" },
+			{ name: "JSON ↔ YAML", path: "/tools/development/json-yaml", description: "Convertissez vos fichiers de config instantanément.", icon: File, size: "small" },
 			{ name: "Hash Generator", path: "/tools/development/hash-generator", description: "SHA-256, MD5 et plus pour vos données.", icon: Hash, size: "small", comingSoon: true },
 			{ name: "RSA Key Pair Gen", path: "/tools/development/rsa-gen", description: "Génère des paires de clés publiques et privées.", icon: Key, size: "small", comingSoon: true },
 			{ name: "Unit Converter", path: "/tools/development/unit-converter", description: "Pixels ↔ REM / Bytes ↔ MB / HEX ↔ RGB.", icon: Cpu, size: "medium", comingSoon: true },
-			{ name: "Crontab Generator", path: "/tools/development/crontab-gen", description: "Aide visuelle pour la syntaxe Cron.", icon: Terminal, size: "small", comingSoon: false },
+			{ name: "Crontab Generator", path: "/tools/development/crontab-gen", description: "Aide visuelle pour la syntaxe Cron.", icon: Terminal, size: "small" },
 		]
 	},
 	{
