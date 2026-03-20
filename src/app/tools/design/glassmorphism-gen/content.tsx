@@ -11,8 +11,8 @@
 /* ----- IMPORTS ----- */
 import { useState } from "react";
 import { IGlassmorphismConfig } from "@/types/tools/design/GlassmorphismGen";
-import Sidebar from "@/components/pages/tools/design/Glassmorphism-gen/Sidebar/Sidebar";
-import Result from "@/components/pages/tools/design/Glassmorphism-gen/Result/Result";
+import Sidebar from "@/components/pages/tools/design/glassmorphism-gen/Sidebar/Sidebar";
+import Result from "@/components/pages/tools/design/glassmorphism-gen/Result/Result";
 
 
 /* ----- COMPONENT ----- */
