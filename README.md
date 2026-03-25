@@ -34,6 +34,7 @@ Cette plateforme propose une expérience **minimaliste**, **performante** et **u
 ### 🎨 Catégorie : Design
 * **CSS Glassmorphism** : Générateur d'effets de verre dépoli en temps réel avec prévisualisation animée. Supporte les exports en `CSS RAW`, `Tailwind CSS` et `React Object Style`.
 * **Color Variations** : Générateur de déclinaisons harmonieuses (triades, complémentaires, analogues) basées sur la roue chromatique HSL à partir d'une couleur maître.
+* **Color Palette** : Configurateur de Design System permettant de définir une dominante et de sélectionner des accents (complémentaires, analogues, monochromes) avec exportation aux formats `JSON`, `CSS` et `CSV`.
 
 ---
 

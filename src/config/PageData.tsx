@@ -102,7 +102,7 @@ const AllCategories: ICategoryConfig[] = [
 		tools: [
 			{ name: "CSS Glassmorphism", path: "/tools/design/glassmorphism-gen", description: "Générateur de code CSS pour effets de flou.", icon: Layout, size: "small" },
 			{ name: "Color Variations", path: "/tools/design/color-variations", description: "Générez des variations harmonieuses à partir d'une couleur dominante.", icon: Palette, size: "medium" },
-			{ name: "Color Palette", path: "/tools/design/color-palette", description: "Créez des palettes de couleurs harmonieuses.", icon: Palette, size: "medium", comingSoon: true },
+			{ name: "Color Palette", path: "/tools/design/color-palette", description: "Créez des palettes de couleurs harmonieuses.", icon: Palette, size: "medium" },
 			{ name: "Visual Identity", path: "/tools/design/visual-identity", description: "Visualisez vos choix de polices et couleurs.", icon: TextInitial, size: "large", comingSoon: true },
 			{ name: "Sprite Sheet Maker", path: "/tools/design/sprite-sheet-maker", description: "Permet de grouper des sprites en sprite sheet.", icon: Sheet, size: "medium", comingSoon: true },
 			{ name: "Sprite Sheet Cuter", path: "/tools/design/sprite-sheet-cuter", description: "Permet de découper une sprite sheet en image.", icon: StickyNote, size: "medium", comingSoon: true }
