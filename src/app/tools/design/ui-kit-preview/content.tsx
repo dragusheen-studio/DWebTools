@@ -16,7 +16,7 @@ import CarouselSection from "@/components/pages/tools/design/ui-kit-preview/Caro
 
 
 /* ----- COMPONENT ----- */
-function UIKitPreviewContent() {
+function Content() {
 	const [tokens, setTokens] = useState<IColorToken[]>([
 		{ id: crypto.randomUUID(), role: "primary", hex: "#3b82f6" },
 		{ id: crypto.randomUUID(), role: "bgLight", hex: "#ffffff" },
@@ -31,4 +31,4 @@ function UIKitPreviewContent() {
 	);
 }
 
-export default UIKitPreviewContent;
+export default Content;
