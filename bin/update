@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Couleurs pour le terminal
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+echo -e "${BLUE}🚀 DWebTools - Maintenance System${NC}"
+echo "-----------------------------------"
+
+# 1. Nettoyage des caches et des modules (Optionnel mais recommandé pour éviter les bugs fantômes)
+echo -e "${YELLOW}🧹 Nettoyage des dossiers temporaires...${NC}"
+rm -rf .next
+rm -rf node_modules
+
+# 2. Mise à jour des dépendances vers les dernières versions compatibles
+echo -e "${YELLOW}🆙 Mise à jour des dépendances (pnpm)...${NC}"
+pnpm update --latest
+
+# 3. Installation propre
+echo -e "${YELLOW}📦 Installation des nouvelles dépendances...${NC}"
+pnpm install
+
+# 4. Vérification du build (pour s'assurer qu'aucune maj n'a cassé le code)
+echo -e "${YELLOW}🛠️ Vérification de l'intégrité du build...${NC}"
+pnpm build
+
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}✅ Projet mis à jour et validé avec succès !${NC}"
+else
+    echo -e "\033[0;31m❌ Erreur lors du build après mise à jour.${NC}"
+    exit 1
+fi
