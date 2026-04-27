@@ -104,7 +104,7 @@ const AllCategories: ICategoryConfig[] = [
 			{ name: "Color Variations", path: "/tools/design/color-variations", description: "Générez des variations harmonieuses à partir d'une couleur dominante.", icon: Palette, size: "medium" },
 			{ name: "Color Palette", path: "/tools/design/color-palette", description: "Créez des palettes de couleurs harmonieuses.", icon: Palette, size: "medium" },
 			{ name: "UI Kit Preview", path: "/tools/design/ui-kit-preview", description: "Visualisez votre charte graphique sur des composants d'interface réels.", icon: TextInitial, size: "large" },
-			{ name: "Sprite Sheet Maker", path: "/tools/design/sprite-sheet-maker", description: "Permet de grouper des sprites en sprite sheet.", icon: Sheet, size: "medium", comingSoon: true },
+			{ name: "Sprite Sheet Maker", path: "/tools/design/sprite-sheet-maker", description: "Permet de grouper des sprites en sprite sheet.", icon: Sheet, size: "medium" },
 			{ name: "Sprite Sheet Cuter", path: "/tools/design/sprite-sheet-cuter", description: "Permet de découper une sprite sheet en image.", icon: StickyNote, size: "medium" }
 		]
 	}
