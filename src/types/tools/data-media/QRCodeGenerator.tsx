@@ -7,6 +7,10 @@
 */
 
 
+/* ----- IMPORTS ----- */
+import { GradientSettings } from "@lglab/react-qr-code";
+
+
 /* ----- TYPES ----- */
 type ContentType = "text" | "wifi" | "vcard";
 
@@ -31,12 +35,17 @@ interface IContent {
 	vcard: IContentVCard;
 }
 
-
+interface IGradient {
+	type: "linear" | "radial";
+	from: string;
+	to: string;
+	rotation: number;
+}
 
 interface IQRCodeGeneratorConfig {
 	content: IContent;
-	fgColor: string;
-	bgColor: string;
+	fgColor: string | IGradient | "transparent";
+	bgColor: string | IGradient | "transparent";
 	level: "L" | "M" | "Q" | "H";
 	margin: number;
 }
@@ -47,5 +56,6 @@ export type {
 	ContentType,
 	IContentWifi,
 	IContentVCard,
+	IGradient,
 	IQRCodeGeneratorConfig
 };

@@ -9,12 +9,12 @@
 "use client";
 
 /* ----- IMPORTS ----- */
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import { Download, Settings2 } from "lucide-react";
-import { QRCodeCanvas } from "qrcode.react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator";
+import { GradientSettings, ReactQRCode, ReactQRCodeRef } from '@lglab/react-qr-code'
 
 
 /* ----- PROPS ----- */
@@ -25,23 +25,60 @@ interface Props {
 
 /* ----- COMPONENT ----- */
 function QrGeneratorWorkspace({ config }: Props) {
+	const QRCodeRef = useRef<ReactQRCodeRef>(null)
+
 	const qrValue = useMemo(() => {
-		switch (config.mode) {
-			case "wifi": return `WIFI:S:${config.wifi.ssid};T:${config.wifi.enc};P:${config.wifi.pass};;`;
-			case "vcard": return `BEGIN:VCARD\nVERSION:3.0\nN:${config.vcard.name}\nTEL:${config.vcard.tel}\nEMAIL:${config.vcard.email}\nEND:VCARD`;
-			default: return config.text || " ";
+		switch (config.content.mode) {
+			case "wifi": return `WIFI:S:${config.content.wifi.ssid};T:${config.content.wifi.enc};P:${config.content.wifi.pass};;`;
+			case "vcard": return `BEGIN:VCARD\nVERSION:3.0\nN:${config.content.vcard.name}\nTEL:${config.content.vcard.tel}\nEMAIL:${config.content.vcard.email}\nEND:VCARD`;
+			default: return config.content.text || " ";
 		}
-	}, [config.mode, config.text, config.wifi, config.vcard]);
+	}, [config.content.mode, config.content.text, config.content.wifi, config.content.vcard]);
 
 	const downloadQR = () => {
-		const canvas = document.getElementById("qr-canvas") as HTMLCanvasElement;
-		if (!canvas) return;
-		const link = document.createElement("a");
-		link.download = `qrcode-dwebtools.png`;
-		link.href = canvas.toDataURL("image/png");
-		link.click();
+		QRCodeRef.current?.download({
+			name: 'qrcode-dwebtools',
+			format: 'png',
+			size: 1000,
+		})
 		toast.success("QR Code téléchargé !");
 	};
+
+	const getQRCodeGradient = useMemo((): GradientSettings => {
+		if (typeof config.fgColor === "string") {
+			return {
+				type: "linear",
+				rotation: 0,
+				stops: [
+					{ offset: '0%', color: config.fgColor },
+					{ offset: '100%', color: config.fgColor }
+				],
+			};
+		}
+
+		return {
+			type: config.fgColor.type,
+			rotation: config.fgColor.rotation,
+			stops: [
+				{ offset: '0%', color: config.fgColor.from },
+				{ offset: '100%', color: config.fgColor.to }
+			],
+		};
+	}, [config.fgColor]);
+
+	const getBackgroundSettings = useMemo(() => {
+		if (config.bgColor === "transparent") return "transparent";
+		if (typeof config.bgColor === "string") return config.bgColor;
+
+		return {
+			type: config.bgColor.type,
+			rotation: config.bgColor.rotation,
+			stops: [
+				{ offset: '0%', color: config.bgColor.from },
+				{ offset: '100%', color: config.bgColor.to }
+			]
+		};
+	}, [config.bgColor]);
 
 	return (
 		<div className="flex-1 min-h-150 p-10 rounded-[3.5rem] bg-zinc-950 border border-zinc-800 shadow-inner flex flex-col items-center justify-center relative overflow-hidden">
@@ -55,15 +92,14 @@ function QrGeneratorWorkspace({ config }: Props) {
 				</Button>
 			</div>
 			<div className="flex grow justify-center items-center">
-				<QRCodeCanvas
-					className="transition-all duration-500"
-					id="qr-canvas"
-					value={qrValue}
+				<ReactQRCode
+					ref={QRCodeRef}
+					gradient={getQRCodeGradient}
+					background={getBackgroundSettings}
+					marginSize={config.margin}
 					size={280}
 					level={config.level}
-					fgColor={config.fgColor}
-					bgColor={config.bgColor}
-					marginSize={config.margin}
+					value={qrValue}
 				/>
 			</div>
 		</div>

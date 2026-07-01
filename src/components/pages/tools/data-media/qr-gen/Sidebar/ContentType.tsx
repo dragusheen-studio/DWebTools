@@ -16,13 +16,11 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ContentType, IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator";
 
-
 /* ----- PROPS ----- */
 interface Props {
 	config: IQRCodeGeneratorConfig;
 	setConfig: React.Dispatch<React.SetStateAction<IQRCodeGeneratorConfig>>;
 }
-
 
 /* ----- COMPONENT ----- */
 function ContentTypeSelecter({ config, setConfig }: Props) {
@@ -81,7 +79,7 @@ function ContentTypeSelecter({ config, setConfig }: Props) {
 		["vcard",
 			{
 				icon: UserCircle,
-				tabLabel: "Contact (VCard)",
+				tabLabel: "VCard",
 				content: [
 					{
 						label: "Nom",
@@ -111,14 +109,21 @@ function ContentTypeSelecter({ config, setConfig }: Props) {
 
 	return (
 		<AccordionItem value="ContentType">
-			<AccordionTrigger className="flex items-center justify-between px-1">
+			<AccordionTrigger className="flex items-center justify-between px-1 hover:no-underline">
 				<Label className="text-[10px] font-black uppercase text-zinc-600">Type de contenu</Label>
 				<span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider bg-blue-500/10 px-2 py-0.5 rounded-md border border-blue-500/20">
 					{tabs.get(config.content.mode)?.tabLabel}
 				</span>
 			</AccordionTrigger>
 			<AccordionContent className="space-y-4">
-				<Tabs value={config.content.mode} onValueChange={(v: any) => setConfig({ ...config, content: { ...config.content, mode: v.value } })} className="w-full">
+				<Tabs
+					value={config.content.mode}
+					onValueChange={(v: string) => setConfig({
+						...config,
+						content: { ...config.content, mode: v as ContentType }
+					})}
+					className="w-full"
+				>
 					<TabsList className="grid grid-cols-3 bg-zinc-900 border border-zinc-800 h-12 p-1 rounded-2xl">
 						<TabsTrigger value="text" className="rounded-xl data-[state=active]:bg-zinc-800 data-[state=active]:text-blue-400">
 							<Type size={16} />

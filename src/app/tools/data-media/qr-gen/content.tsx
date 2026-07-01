@@ -18,10 +18,12 @@ import QrGeneratorSidebar from "@/components/pages/tools/data-media/qr-gen/Sideb
 /* ----- COMPONENT ----- */
 function QrGeneratorContent() {
 	const [config, setConfig] = useState<IQRCodeGeneratorConfig>({
-		mode: "text",
-		text: "https://dragusheen.com",
-		wifi: { ssid: "", pass: "", enc: "WPA" },
-		vcard: { name: "", tel: "", email: "" },
+		content: {
+			mode: "text",
+			text: "https://dragusheen.com",
+			wifi: { ssid: "", pass: "", enc: "WPA" },
+			vcard: { name: "", tel: "", email: "" },
+		},
 		fgColor: "#000000",
 		bgColor: "#ffffff",
 		level: "M" as "L" | "M" | "Q" | "H",
