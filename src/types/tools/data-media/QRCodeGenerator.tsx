@@ -8,7 +8,9 @@
 
 /* ----- TYPES ----- */
 type ContentType = "text" | "wifi" | "vcard";
-type DotStyle = 'square' | 'square-sm' | 'pinched-square' | 'rounded' | 'leaf' | 'vertical-line' | 'horizontal-line' | 'circle' | 'diamond' | 'star' | 'heart' | 'hashtag'
+type DotStyle = 'square' | 'square-sm' | 'pinched-square' | 'rounded' | 'leaf' | 'vertical-line' | 'horizontal-line' | 'circle' | 'diamond' | 'star' | 'heart' | 'hashtag';
+type FinderInnerStyle = 'square' | 'pinched-square' | 'rounded-sm' | 'rounded' | 'rounded-lg' | 'circle' | 'inpoint-sm' | 'inpoint' | 'inpoint-lg' | 'outpoint-sm' | 'outpoint' | 'outpoint-lg' | 'leaf-sm' | 'leaf' | 'leaf-lg' | 'diamond' | 'star' | 'heart' | 'hashtag';
+type FinderOuterStyle = 'square' | 'pinched-square' | 'rounded-sm' | 'rounded' | 'rounded-lg' | 'circle' | 'inpoint-sm' | 'inpoint' | 'inpoint-lg' | 'outpoint-sm' | 'outpoint' | 'outpoint-lg' | 'leaf-sm' | 'leaf' | 'leaf-lg';
 
 /* ----- INTERFACES ----- */
 interface IContentWifi {
@@ -49,12 +51,18 @@ interface IQRCodeGeneratorConfig {
 	level: "L" | "M" | "Q" | "H";
 	margin: number;
 	dotStyle: DotStyle;
+	finderStyle: {
+		inner: FinderInnerStyle;
+		outer: FinderOuterStyle;
+	}
 }
 
 /* ----- EXPORTS ----- */
 export type {
 	ContentType,
 	DotStyle,
+	FinderInnerStyle,
+	FinderOuterStyle,
 	IContentWifi,
 	IContentVCard,
 	IGradient,

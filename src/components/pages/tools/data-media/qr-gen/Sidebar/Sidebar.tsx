@@ -10,19 +10,18 @@
 
 /* ----- IMPORTS ----- */
 import { QrCode, Type, Wifi, UserCircle, Dot } from "lucide-react";
-import { Accordion } from "@/components/ui/accordion";
-import { IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator";
+import { Accordion, AccordionItem } from "@/components/ui/accordion";
+import { DotStyle, IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator";
 import ContentTypeSelecter from "./ContentType";
 import ColorSelecter from "./ColorSelecter/ColorSelecter";
-import DotStyleSelecter from "./DotStyleSelecter";
-
+import PatternStyleSelecter from "./PatternStyleSelecter";
+import { getDotOptions, getFinderInnerOptions, getFinderOuterOptions } from "@/config/tools/data-media/QrGen";
 
 /* ----- PROPS ----- */
 interface Props {
 	config: IQRCodeGeneratorConfig;
 	setConfig: React.Dispatch<React.SetStateAction<IQRCodeGeneratorConfig>>;
 }
-
 
 /* ----- COMPONENT ----- */
 function QrGeneratorSidebar({ config, setConfig }: Props) {
@@ -39,7 +38,9 @@ function QrGeneratorSidebar({ config, setConfig }: Props) {
 					<ContentTypeSelecter config={config} setConfig={setConfig} />
 					<ColorSelecter id="Foreground" config={config.fgColor} setConfig={(value) => setConfig({ ...config, fgColor: value })} label="Couleur du QR" defaultColor="#000000" />
 					<ColorSelecter id="Background" config={config.bgColor} setConfig={(value) => setConfig({ ...config, bgColor: value })} label="Couleur du fond" allowTransparent />
-					<DotStyleSelecter config={config} setConfig={setConfig} />
+					<PatternStyleSelecter id="DotStyle" value={config.dotStyle} setValue={(value) => setConfig({ ...config, dotStyle: value })} options={getDotOptions()} label="Style des points" />
+					<PatternStyleSelecter id="FinderInnerStyle" value={config.finderStyle.inner} setValue={(value) => setConfig({ ...config, finderStyle: { ...config.finderStyle, inner: value } })} options={getFinderInnerOptions()} label="Style des yeux (intérieur)" />
+					<PatternStyleSelecter id="FinderOuterStyle" value={config.finderStyle.outer} setValue={(value) => setConfig({ ...config, finderStyle: { ...config.finderStyle, outer: value } })} options={getFinderOuterOptions()} label="Style des yeux (extérieur)" />
 				</Accordion>
 			</div>
 		</div>

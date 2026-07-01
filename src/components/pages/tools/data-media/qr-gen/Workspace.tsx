@@ -14,7 +14,7 @@ import { Download, Settings2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator";
-import { DataModulesSettings, GradientSettings, ReactQRCode, ReactQRCodeRef } from '@lglab/react-qr-code'
+import { DataModulesSettings, FinderPatternInnerSettings, FinderPatternOuterSettings, GradientSettings, ReactQRCode, ReactQRCodeRef } from '@lglab/react-qr-code'
 
 /* ----- PROPS ----- */
 interface Props {
@@ -99,6 +99,8 @@ function QrGeneratorWorkspace({ config }: Props) {
 					level={config.level}
 					value={qrValue}
 					dataModulesSettings={{ style: config.dotStyle as DataModulesSettings["style"] }}
+					finderPatternInnerSettings={{ style: config.finderStyle.inner as FinderPatternInnerSettings["style"] }}
+					finderPatternOuterSettings={{ style: config.finderStyle.outer as FinderPatternOuterSettings["style"] }}
 				/>
 			</div>
 		</div>

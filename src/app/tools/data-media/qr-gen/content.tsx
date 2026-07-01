@@ -27,7 +27,11 @@ function QrGeneratorContent() {
 		bgColor: "#ffffff",
 		level: "M" as "L" | "M" | "Q" | "H",
 		margin: 2,
-		dotStyle: "square"
+		dotStyle: "square",
+		finderStyle: {
+			inner: "square",
+			outer: "square"
+		}
 	});
 
 	return (
