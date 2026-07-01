@@ -12,8 +12,8 @@
 import { RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IGlassmorphismConfig } from "@/types/tools/design/GlassmorphismGen";
-import ColorPicker from "../../../../../custom-ui/ColorPicker";
-import NumericalSlider from "./NumericalSlider";
+import ColorPicker from "@/components/custom-ui/ColorPicker";
+import NumericalSlider from "@/components/custom-ui/NumericalSlider";
 import PercentageSlider from "./PercentageSlider";
 
 

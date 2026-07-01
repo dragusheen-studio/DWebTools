@@ -92,7 +92,7 @@ const AllCategories: ICategoryConfig[] = [
 			{ name: "Youtube Downloader", path: "/tools/data-media/yt-download", description: "Téléchargement YouTube en MP3 / MP4.", icon: FaYoutube, size: "large", comingSoon: true },
 			{ name: "Image Resize", path: "/tools/data-media/image-resize", description: "Redimensionnez vos images en ligne.", icon: Maximize, size: "small", comingSoon: true },
 			{ name: "Image Rescale", path: "/tools/data-media/image-rescale", description: "Changement d'échelle (Ratio) d'image.", icon: Scaling, size: "small", comingSoon: true },
-			{ name: "QR Code Generator", path: "/tools/data-media/qr-gen", description: "Générateur de codes QR personnalisables.", icon: QrCode, size: "large", comingSoon: true },
+			{ name: "QR Code Generator", path: "/tools/data-media/qr-gen", description: "Générateur de codes QR personnalisables.", icon: QrCode, size: "large" },
 		]
 	},
 	{
