@@ -6,14 +6,9 @@
 	--U-----U------------------------
 */
 
-
-/* ----- IMPORTS ----- */
-import { GradientSettings } from "@lglab/react-qr-code";
-
-
 /* ----- TYPES ----- */
 type ContentType = "text" | "wifi" | "vcard";
-
+type DotStyle = 'square' | 'square-sm' | 'pinched-square' | 'rounded' | 'leaf' | 'vertical-line' | 'horizontal-line' | 'circle' | 'diamond' | 'star' | 'heart' | 'hashtag'
 
 /* ----- INTERFACES ----- */
 interface IContentWifi {
@@ -42,20 +37,27 @@ interface IGradient {
 	rotation: number;
 }
 
+interface IDotModuleSettings {
+	color: string;
+	style: DotStyle;
+}
+
 interface IQRCodeGeneratorConfig {
 	content: IContent;
 	fgColor: string | IGradient | "transparent";
 	bgColor: string | IGradient | "transparent";
 	level: "L" | "M" | "Q" | "H";
 	margin: number;
+	dotStyle: DotStyle;
 }
-
 
 /* ----- EXPORTS ----- */
 export type {
 	ContentType,
+	DotStyle,
 	IContentWifi,
 	IContentVCard,
 	IGradient,
+	IDotModuleSettings,
 	IQRCodeGeneratorConfig
 };

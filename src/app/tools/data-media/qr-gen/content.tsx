@@ -14,7 +14,6 @@ import { IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator
 import QrGeneratorWorkspace from "@/components/pages/tools/data-media/qr-gen/Workspace";
 import QrGeneratorSidebar from "@/components/pages/tools/data-media/qr-gen/Sidebar/Sidebar";
 
-
 /* ----- COMPONENT ----- */
 function QrGeneratorContent() {
 	const [config, setConfig] = useState<IQRCodeGeneratorConfig>({
@@ -28,6 +27,7 @@ function QrGeneratorContent() {
 		bgColor: "#ffffff",
 		level: "M" as "L" | "M" | "Q" | "H",
 		margin: 2,
+		dotStyle: "square"
 	});
 
 	return (
@@ -37,7 +37,6 @@ function QrGeneratorContent() {
 		</div>
 	);
 }
-
 
 /* ----- EXPORT ----- */
 export default QrGeneratorContent;

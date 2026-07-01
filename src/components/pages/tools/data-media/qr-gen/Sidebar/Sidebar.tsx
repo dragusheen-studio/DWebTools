@@ -9,11 +9,12 @@
 "use client";
 
 /* ----- IMPORTS ----- */
-import { QrCode, Type, Wifi, UserCircle } from "lucide-react";
+import { QrCode, Type, Wifi, UserCircle, Dot } from "lucide-react";
 import { Accordion } from "@/components/ui/accordion";
 import { IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator";
 import ContentTypeSelecter from "./ContentType";
 import ColorSelecter from "./ColorSelecter/ColorSelecter";
+import DotStyleSelecter from "./DotStyleSelecter";
 
 
 /* ----- PROPS ----- */
@@ -38,6 +39,7 @@ function QrGeneratorSidebar({ config, setConfig }: Props) {
 					<ContentTypeSelecter config={config} setConfig={setConfig} />
 					<ColorSelecter id="Foreground" config={config.fgColor} setConfig={(value) => setConfig({ ...config, fgColor: value })} label="Couleur du QR" defaultColor="#000000" />
 					<ColorSelecter id="Background" config={config.bgColor} setConfig={(value) => setConfig({ ...config, bgColor: value })} label="Couleur du fond" allowTransparent />
+					<DotStyleSelecter config={config} setConfig={setConfig} />
 				</Accordion>
 			</div>
 		</div>

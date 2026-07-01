@@ -14,14 +14,12 @@ import { Download, Settings2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator";
-import { GradientSettings, ReactQRCode, ReactQRCodeRef } from '@lglab/react-qr-code'
-
+import { DataModulesSettings, GradientSettings, ReactQRCode, ReactQRCodeRef } from '@lglab/react-qr-code'
 
 /* ----- PROPS ----- */
 interface Props {
 	config: IQRCodeGeneratorConfig;
 }
-
 
 /* ----- COMPONENT ----- */
 function QrGeneratorWorkspace({ config }: Props) {
@@ -100,12 +98,12 @@ function QrGeneratorWorkspace({ config }: Props) {
 					size={280}
 					level={config.level}
 					value={qrValue}
+					dataModulesSettings={{ style: config.dotStyle as DataModulesSettings["style"] }}
 				/>
 			</div>
 		</div>
 	);
 }
-
 
 /* ----- EXPORT ----- */
 export default QrGeneratorWorkspace;
