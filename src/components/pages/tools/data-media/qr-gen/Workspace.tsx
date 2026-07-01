@@ -9,9 +9,10 @@
 "use client";
 
 /* ----- IMPORTS ----- */
-import { useRef } from "react";
-import { Download, Settings2 } from "lucide-react";
+import { useRef, useState } from "react";
+import { Download, Settings2, FileImage, FileCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
 import { IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator";
 import { DataModulesSettings, FinderPatternInnerSettings, FinderPatternOuterSettings, GradientSettings, ReactQRCode, ReactQRCodeRef } from '@lglab/react-qr-code'
@@ -26,15 +27,16 @@ interface Props {
 
 /* ----- COMPONENT ----- */
 function QrGeneratorWorkspace({ config, qrValue, getQRCodeGradient, getBackgroundSettings }: Props) {
-	const QRCodeRef = useRef<ReactQRCodeRef>(null)
+	const QRCodeRef = useRef<ReactQRCodeRef>(null);
+	const [downloadFormat, setDownloadFormat] = useState<"png" | "svg">("png");
 
 	const downloadQR = () => {
 		QRCodeRef.current?.download({
 			name: 'qrcode-dwebtools',
-			format: 'png',
-			size: 1000,
-		})
-		toast.success("QR Code téléchargé !");
+			format: downloadFormat,
+			size: downloadFormat === "png" ? 1000 : undefined,
+		});
+		toast.success(`QR Code téléchargé au format ${downloadFormat.toUpperCase()} !`);
 	};
 
 	return (
@@ -44,10 +46,28 @@ function QrGeneratorWorkspace({ config, qrValue, getQRCodeGradient, getBackgroun
 					<Settings2 size={16} />
 					<span className="text-[10px] font-black uppercase tracking-widest italic">Aperçu en direct</span>
 				</div>
-				<Button onClick={downloadQR} className="h-14 aspect-square rounded-2xl bg-blue-600 hover:bg-blue-500 font-black uppercase tracking-widest gap-2 shadow-lg shadow-blue-500/20 active:scale-95 transition-all group">
-					<Download size={18} className="group-hover:animate-bounce transition-all duration-300" />
-				</Button>
+
+				<div className="flex items-center gap-3 bg-zinc-900/50 p-1.5 border border-zinc-800/60 rounded-2xl">
+					<Tabs value={downloadFormat} onValueChange={(v: any) => setDownloadFormat(v)} className="h-9">
+						<TabsList className="bg-zinc-950 border border-zinc-900 h-9 p-0.5 rounded-xl">
+							<TabsTrigger value="png" className="text-[9px] uppercase font-bold gap-1 rounded-lg px-3 data-[state=active]:bg-zinc-800">
+								<FileImage size={11} /> PNG
+							</TabsTrigger>
+							<TabsTrigger value="svg" className="text-[9px] uppercase font-bold gap-1 rounded-lg px-3 data-[state=active]:bg-zinc-800">
+								<FileCode size={11} /> SVG
+							</TabsTrigger>
+						</TabsList>
+					</Tabs>
+
+					<Button
+						onClick={downloadQR}
+						className="h-9 gap-2 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-[10px] font-black uppercase tracking-widest shadow-md shadow-blue-500/10 active:scale-95 transition-all group cursor-pointer"
+					>
+						<Download size={14} className="group-hover:animate-bounce" /> Export
+					</Button>
+				</div>
 			</div>
+
 			<div className="flex grow justify-center items-center">
 				<ReactQRCode
 					ref={QRCodeRef}
