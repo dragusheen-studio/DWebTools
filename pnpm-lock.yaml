@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@lglab/react-qr-code':
+        specifier: ^1.4.10
+        version: 1.4.10(react@19.2.5)
       '@vercel/analytics':
         specifier: ^2.0.1
         version: 2.0.1(next@16.2.4(@babel/core@7.29.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
@@ -524,6 +527,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@lglab/react-qr-code@1.4.10':
+    resolution: {integrity: sha512-B+VOFfvnx+NqVaJqDbh1glHEU/rJR/3XtINcvM3qC9DW292GbaLNoa2OvRlXHYUQdsWcdzNzOcPzT39P1O8uJg==}
+    peerDependencies:
+      react: ^18 || ^19
 
   '@modelcontextprotocol/sdk@1.29.0':
     resolution: {integrity: sha512-zo37mZA9hJWpULgkRpowewez1y6ML5GsXJPY8FI0tBBCd77HEvza4jDqRKOXgHNn867PVGCyTdzqpz0izu5ZjQ==}
@@ -4309,6 +4317,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@lglab/react-qr-code@1.4.10(react@19.2.5)':
+    dependencies:
+      react: 19.2.5
 
   '@modelcontextprotocol/sdk@1.29.0(zod@3.25.76)':
     dependencies:
