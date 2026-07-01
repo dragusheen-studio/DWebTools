@@ -60,6 +60,12 @@ function QrGeneratorWorkspace({ config, qrValue, getQRCodeGradient, getBackgroun
 					dataModulesSettings={{ style: config.dotStyle as DataModulesSettings["style"] }}
 					finderPatternInnerSettings={{ style: config.finderStyle.inner as FinderPatternInnerSettings["style"] }}
 					finderPatternOuterSettings={{ style: config.finderStyle.outer as FinderPatternOuterSettings["style"] }}
+					imageSettings={config.logo.src.trim() !== "" ? {
+						src: config.logo.src,
+						height: config.logo.size,
+						width: config.logo.size,
+						excavate: config.logo.excavate,
+					} : undefined}
 				/>
 			</div>
 		</div>

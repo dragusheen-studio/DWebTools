@@ -19,6 +19,7 @@ import { getDotOptions, getFinderInnerOptions, getFinderOuterOptions } from "@/c
 import NumericalSlider from "@/components/custom-ui/NumericalSlider";
 import { GradientSettings } from "@lglab/react-qr-code";
 import LevelSelecter from "./LevelSelecter";
+import LogoSelector from "./LogoSelector";
 
 /* ----- PROPS ----- */
 interface Props {
@@ -40,7 +41,7 @@ function QrGeneratorSidebar({ config, setConfig, qrValue, getQRCodeGradient, get
 						<QrCode size={20} className="text-blue-500" /> QR Code Gen
 					</h3>
 				</div>
-				<Accordion type="single" className="w-full" defaultValue={"ContentType"}>
+				<Accordion type="multiple" className="w-full" defaultValue={["ContentType"]}>
 					<ContentTypeSelecter config={config} setConfig={setConfig} />
 					<ColorSelecter id="Foreground" config={config.fgColor} setConfig={(value) => setConfig({ ...config, fgColor: value })} label="Couleur du QR" defaultColor="#000000" />
 					<ColorSelecter id="Background" config={config.bgColor} setConfig={(value) => setConfig({ ...config, bgColor: value })} label="Couleur du fond" allowTransparent>
@@ -49,6 +50,7 @@ function QrGeneratorSidebar({ config, setConfig, qrValue, getQRCodeGradient, get
 					<PatternStyleSelecter id="FinderInnerStyle" value={config.finderStyle.inner} setValue={(value) => setConfig({ ...config, finderStyle: { ...config.finderStyle, inner: value } })} options={getFinderInnerOptions()} label="Style des yeux (intérieur)" config={config} qrValue={qrValue} getGradient={getQRCodeGradient} getBackground={getBackgroundSettings} />
 					<PatternStyleSelecter id="FinderOuterStyle" value={config.finderStyle.outer} setValue={(value) => setConfig({ ...config, finderStyle: { ...config.finderStyle, outer: value } })} options={getFinderOuterOptions()} label="Style des yeux (extérieur)" config={config} qrValue={qrValue} getGradient={getQRCodeGradient} getBackground={getBackgroundSettings} />
 					<LevelSelecter config={config} setConfig={setConfig} />
+					<LogoSelector config={config} setConfig={setConfig} />
 				</Accordion>
 			</div>
 		</div>

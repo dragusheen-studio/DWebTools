@@ -39,9 +39,10 @@ interface IGradient {
 	rotation: number;
 }
 
-interface IDotModuleSettings {
-	color: string;
-	style: DotStyle;
+interface IImageSettings {
+	src: string;
+	size: number;
+	excavate: boolean;
 }
 
 interface IQRCodeGeneratorConfig {
@@ -54,7 +55,8 @@ interface IQRCodeGeneratorConfig {
 	finderStyle: {
 		inner: FinderInnerStyle;
 		outer: FinderOuterStyle;
-	}
+	},
+	logo: IImageSettings;
 }
 
 /* ----- EXPORTS ----- */
@@ -66,6 +68,6 @@ export type {
 	IContentWifi,
 	IContentVCard,
 	IGradient,
-	IDotModuleSettings,
+	IImageSettings,
 	IQRCodeGeneratorConfig
 };

@@ -32,6 +32,11 @@ function QrGeneratorContent() {
 		finderStyle: {
 			inner: "square",
 			outer: "square"
+		},
+		logo: {
+			src: "",
+			size: 70,
+			excavate: true
 		}
 	});
 
