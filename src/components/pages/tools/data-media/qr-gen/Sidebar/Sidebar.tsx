@@ -9,13 +9,14 @@
 "use client";
 
 /* ----- IMPORTS ----- */
-import { QrCode, Type, Wifi, UserCircle, Dot } from "lucide-react";
-import { Accordion, AccordionItem } from "@/components/ui/accordion";
-import { DotStyle, IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator";
+import { QrCode } from "lucide-react";
+import { Accordion } from "@/components/ui/accordion";
+import { IQRCodeGeneratorConfig } from "@/types/tools/data-media/QRCodeGenerator";
 import ContentTypeSelecter from "./ContentType";
 import ColorSelecter from "./ColorSelecter/ColorSelecter";
 import PatternStyleSelecter from "./PatternStyleSelecter";
 import { getDotOptions, getFinderInnerOptions, getFinderOuterOptions } from "@/config/tools/data-media/QrGen";
+import NumericalSlider from "@/components/custom-ui/NumericalSlider";
 
 /* ----- PROPS ----- */
 interface Props {
@@ -37,7 +38,9 @@ function QrGeneratorSidebar({ config, setConfig }: Props) {
 				<Accordion type="multiple" className="w-full" defaultValue={["ContentType"]}>
 					<ContentTypeSelecter config={config} setConfig={setConfig} />
 					<ColorSelecter id="Foreground" config={config.fgColor} setConfig={(value) => setConfig({ ...config, fgColor: value })} label="Couleur du QR" defaultColor="#000000" />
-					<ColorSelecter id="Background" config={config.bgColor} setConfig={(value) => setConfig({ ...config, bgColor: value })} label="Couleur du fond" allowTransparent />
+					<ColorSelecter id="Background" config={config.bgColor} setConfig={(value) => setConfig({ ...config, bgColor: value })} label="Couleur du fond" allowTransparent>
+						<NumericalSlider label="Marge" value={config.margin} setValue={(value) => setConfig({ ...config, margin: value })} min={0} max={12} step={1} />
+					</ColorSelecter>
 					<PatternStyleSelecter id="DotStyle" value={config.dotStyle} setValue={(value) => setConfig({ ...config, dotStyle: value })} options={getDotOptions()} label="Style des points" />
 					<PatternStyleSelecter id="FinderInnerStyle" value={config.finderStyle.inner} setValue={(value) => setConfig({ ...config, finderStyle: { ...config.finderStyle, inner: value } })} options={getFinderInnerOptions()} label="Style des yeux (intérieur)" />
 					<PatternStyleSelecter id="FinderOuterStyle" value={config.finderStyle.outer} setValue={(value) => setConfig({ ...config, finderStyle: { ...config.finderStyle, outer: value } })} options={getFinderOuterOptions()} label="Style des yeux (extérieur)" />

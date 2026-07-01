@@ -15,6 +15,7 @@ import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/
 import { IGradient } from "@/types/tools/data-media/QRCodeGenerator";
 import GradientSelecter from "./GradientSelecter";
 import TabSelecter from "./TabSelecter";
+import { Separator } from "@/components/ui/separator";
 
 /* ----- PROPS ----- */
 interface Props {
@@ -24,10 +25,11 @@ interface Props {
 	label: string;
 	allowTransparent?: boolean;
 	defaultColor?: string;
+	children?: React.ReactNode;
 }
 
 /* ----- COMPONENT ----- */
-function ColorSelecter({ id, config, setConfig, label, allowTransparent = false, defaultColor = "#ffffff" }: Props) {
+function ColorSelecter({ id, config, setConfig, label, allowTransparent = false, defaultColor = "#ffffff", children }: Props) {
 	const isGradient = config !== null && typeof config === "object";
 	const isTransparent = config === "transparent";
 	const currentMode = isTransparent ? "transparent" : isGradient ? "gradient" : "single";
@@ -76,6 +78,15 @@ function ColorSelecter({ id, config, setConfig, label, allowTransparent = false,
 					<p className="text-[11px] text-zinc-500 italic px-1 animate-in fade-in duration-300">
 						Le fond sera transparent lors de l'affichage et de l'exportation.
 					</p>
+				)}
+
+				{children && (
+					<>
+						<Separator className="my-2" />
+						<div className="animate-in fade-in duration-300">
+							{children}
+						</div>
+					</>
 				)}
 
 			</AccordionContent>
