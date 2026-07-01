@@ -9,7 +9,7 @@
 "use client";
 
 /* ----- IMPORTS ----- */
-import { useMemo, useRef } from "react";
+import { useRef } from "react";
 import { Download, Settings2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -19,19 +19,14 @@ import { DataModulesSettings, FinderPatternInnerSettings, FinderPatternOuterSett
 /* ----- PROPS ----- */
 interface Props {
 	config: IQRCodeGeneratorConfig;
+	qrValue: string;
+	getQRCodeGradient: GradientSettings;
+	getBackgroundSettings: string | GradientSettings | "transparent";
 }
 
 /* ----- COMPONENT ----- */
-function QrGeneratorWorkspace({ config }: Props) {
+function QrGeneratorWorkspace({ config, qrValue, getQRCodeGradient, getBackgroundSettings }: Props) {
 	const QRCodeRef = useRef<ReactQRCodeRef>(null)
-
-	const qrValue = useMemo(() => {
-		switch (config.content.mode) {
-			case "wifi": return `WIFI:S:${config.content.wifi.ssid};T:${config.content.wifi.enc};P:${config.content.wifi.pass};;`;
-			case "vcard": return `BEGIN:VCARD\nVERSION:3.0\nN:${config.content.vcard.name}\nTEL:${config.content.vcard.tel}\nEMAIL:${config.content.vcard.email}\nEND:VCARD`;
-			default: return config.content.text || " ";
-		}
-	}, [config.content.mode, config.content.text, config.content.wifi, config.content.vcard]);
 
 	const downloadQR = () => {
 		QRCodeRef.current?.download({
@@ -41,42 +36,6 @@ function QrGeneratorWorkspace({ config }: Props) {
 		})
 		toast.success("QR Code téléchargé !");
 	};
-
-	const getQRCodeGradient = useMemo((): GradientSettings => {
-		if (typeof config.fgColor === "string") {
-			return {
-				type: "linear",
-				rotation: 0,
-				stops: [
-					{ offset: '0%', color: config.fgColor },
-					{ offset: '100%', color: config.fgColor }
-				],
-			};
-		}
-
-		return {
-			type: config.fgColor.type,
-			rotation: config.fgColor.rotation,
-			stops: [
-				{ offset: '0%', color: config.fgColor.from },
-				{ offset: '100%', color: config.fgColor.to }
-			],
-		};
-	}, [config.fgColor]);
-
-	const getBackgroundSettings = useMemo(() => {
-		if (config.bgColor === "transparent") return "transparent";
-		if (typeof config.bgColor === "string") return config.bgColor;
-
-		return {
-			type: config.bgColor.type,
-			rotation: config.bgColor.rotation,
-			stops: [
-				{ offset: '0%', color: config.bgColor.from },
-				{ offset: '100%', color: config.bgColor.to }
-			]
-		};
-	}, [config.bgColor]);
 
 	return (
 		<div className="flex-1 min-h-150 p-10 rounded-[3.5rem] bg-zinc-950 border border-zinc-800 shadow-inner flex flex-col items-center justify-center relative overflow-hidden">
