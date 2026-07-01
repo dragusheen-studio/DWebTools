@@ -18,6 +18,7 @@ import PatternStyleSelecter from "./PatternStyleSelecter";
 import { getDotOptions, getFinderInnerOptions, getFinderOuterOptions } from "@/config/tools/data-media/QrGen";
 import NumericalSlider from "@/components/custom-ui/NumericalSlider";
 import { GradientSettings } from "@lglab/react-qr-code";
+import LevelSelecter from "./LevelSelecter";
 
 /* ----- PROPS ----- */
 interface Props {
@@ -47,6 +48,7 @@ function QrGeneratorSidebar({ config, setConfig, qrValue, getQRCodeGradient, get
 					</ColorSelecter><PatternStyleSelecter id="DotStyle" value={config.dotStyle} setValue={(value) => setConfig({ ...config, dotStyle: value })} options={getDotOptions()} label="Style des points" config={config} qrValue={qrValue} getGradient={getQRCodeGradient} getBackground={getBackgroundSettings} />
 					<PatternStyleSelecter id="FinderInnerStyle" value={config.finderStyle.inner} setValue={(value) => setConfig({ ...config, finderStyle: { ...config.finderStyle, inner: value } })} options={getFinderInnerOptions()} label="Style des yeux (intérieur)" config={config} qrValue={qrValue} getGradient={getQRCodeGradient} getBackground={getBackgroundSettings} />
 					<PatternStyleSelecter id="FinderOuterStyle" value={config.finderStyle.outer} setValue={(value) => setConfig({ ...config, finderStyle: { ...config.finderStyle, outer: value } })} options={getFinderOuterOptions()} label="Style des yeux (extérieur)" config={config} qrValue={qrValue} getGradient={getQRCodeGradient} getBackground={getBackgroundSettings} />
+					<LevelSelecter config={config} setConfig={setConfig} />
 				</Accordion>
 			</div>
 		</div>
